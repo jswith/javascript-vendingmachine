@@ -747,6 +747,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class VendingMachine {
     constructor() {
         this.observers = [];
@@ -775,9 +776,33 @@ class VendingMachine {
         this.observers.push({ key, element });
         this[key]();
     }
+    validateProduct(product, products) {
+        if (_validator__WEBPACK_IMPORTED_MODULE_3__.productValidator.isDuplicated(product.name, products)) {
+            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
+        }
+        if (_validator__WEBPACK_IMPORTED_MODULE_3__.productValidator.isIncorrectUnit(product.price)) {
+            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
+        }
+    }
+    validateUpdateProduct(targetName, name, price, products) {
+        if (_validator__WEBPACK_IMPORTED_MODULE_3__.updateProductValidator.isDuplicated(targetName, name, products)) {
+            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
+        }
+        if (_validator__WEBPACK_IMPORTED_MODULE_3__.updateProductValidator.isIncorrectUnit(price)) {
+            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
+        }
+    }
+    validateChange(inputMoney, currentChange) {
+        if (_validator__WEBPACK_IMPORTED_MODULE_3__.changeValidator.isOverMax(inputMoney, currentChange)) {
+            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_AMOUNT);
+        }
+        if (_validator__WEBPACK_IMPORTED_MODULE_3__.changeValidator.isIncorrectUnit(inputMoney)) {
+            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_CHARGE_MONEY);
+        }
+    }
     addProduct(product) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateProduct)(product, this.products);
+            this.validateProduct(product, this.products);
             const newProduct = new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product);
             this.products.push(newProduct);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
@@ -789,7 +814,7 @@ class VendingMachine {
     }
     updateProduct({ targetName, name, price, quantity }) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateUpdateProduct)(targetName, name, price, this.products);
+            this.validateUpdateProduct(targetName, name, price, this.products);
             const currentProduct = this.products.find((product) => product.name === targetName);
             currentProduct.update({ name, price, quantity });
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
@@ -807,7 +832,7 @@ class VendingMachine {
     }
     charge(inputMoney) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateChange)(inputMoney, this.amount.getAmount());
+            this.validateChange(inputMoney, this.amount.getAmount());
             this.amount.genarateRandomCoin(inputMoney);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('amount', this.amount);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.CHARGE, 'update');
@@ -1256,9 +1281,9 @@ const deleteSeparator = (price) => parseInt(price.replace(',', ''), 10);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "validateProduct": () => (/* binding */ validateProduct),
-/* harmony export */   "validateChange": () => (/* binding */ validateChange),
-/* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct)
+/* harmony export */   "productValidator": () => (/* binding */ productValidator),
+/* harmony export */   "changeValidator": () => (/* binding */ changeValidator),
+/* harmony export */   "updateProductValidator": () => (/* binding */ updateProductValidator)
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
@@ -1270,14 +1295,6 @@ const productValidator = {
         return price % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.UNIT !== 0;
     },
 };
-const validateProduct = (product, products) => {
-    if (productValidator.isDuplicated(product.name, products)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
-    }
-    if (productValidator.isIncorrectUnit(product.price)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
-    }
-};
 const changeValidator = {
     isOverMax(inputMoney, currentChange) {
         return inputMoney + currentChange > _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.MAX;
@@ -1285,14 +1302,6 @@ const changeValidator = {
     isIncorrectUnit(inputMoney) {
         return inputMoney % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.UNIT !== 0;
     },
-};
-const validateChange = (inputMoney, currentChange) => {
-    if (changeValidator.isOverMax(inputMoney, currentChange)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_AMOUNT);
-    }
-    if (changeValidator.isIncorrectUnit(inputMoney)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_CHARGE_MONEY);
-    }
 };
 const updateProductValidator = {
     isDuplicated(targetName, name, products) {
@@ -1305,14 +1314,6 @@ const updateProductValidator = {
     isIncorrectUnit(price) {
         return price % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.UNIT !== 0;
     },
-};
-const validateUpdateProduct = (targetName, name, price, products) => {
-    if (updateProductValidator.isDuplicated(targetName, name, products)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
-    }
-    if (updateProductValidator.isIncorrectUnit(price)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
-    }
 };
 
 
