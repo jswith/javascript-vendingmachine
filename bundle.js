@@ -707,7 +707,7 @@ class Coin {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Product": () => (/* binding */ Product)
 /* harmony export */ });
 class Product {
     constructor(product, id = Math.random().toString(36).substring(2, 9)) {
@@ -720,7 +720,7 @@ class Product {
         this.quantity = product.quantity;
     }
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Product);
+
 
 
 /***/ }),
@@ -751,7 +751,7 @@ class VendingMachine {
     constructor() {
         this.observers = [];
         this.amount = new _Coin__WEBPACK_IMPORTED_MODULE_4__["default"](..._storage__WEBPACK_IMPORTED_MODULE_1__["default"].getAmount());
-        this.products = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getProducts().map((product) => new _Product__WEBPACK_IMPORTED_MODULE_5__["default"](product, product.id));
+        this.products = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getProducts().map((product) => new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product, product.id));
     }
     static get instance() {
         if (!VendingMachine._instance) {
@@ -778,7 +778,7 @@ class VendingMachine {
     addProduct(product) {
         try {
             (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateProduct)(product, this.products);
-            const newProduct = new _Product__WEBPACK_IMPORTED_MODULE_5__["default"](product);
+            const newProduct = new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product);
             this.products.push(newProduct);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'add', newProduct);
