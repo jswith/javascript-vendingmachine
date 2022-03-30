@@ -790,10 +790,10 @@ class VendingMachine {
     updateProduct({ targetName, name, price, quantity }) {
         try {
             (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateUpdateProduct)(targetName, name, price, this.products);
-            const target = this.products.find((product) => product.name === targetName);
-            target.update({ name, price, quantity });
+            const currentProduct = this.products.find((product) => product.name === targetName);
+            currentProduct.update({ name, price, quantity });
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
-            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'update', target);
+            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'update', currentProduct);
         }
         catch (error) {
             alert(error.message);
@@ -845,10 +845,10 @@ const render = (path) => {
     var _a, _b, _c;
     (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$$)('.focus-button').forEach((button) => button.classList.remove('focus-button'));
     (_a = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)(`[route='${path}']`, nav)) === null || _a === void 0 ? void 0 : _a.classList.add('focus-button');
-    const cur = (_c = (_b = routers.find((route) => route.path === path)) === null || _b === void 0 ? void 0 : _b.component) !== null && _c !== void 0 ? _c : (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management');
-    const prevs = routers.filter((route) => route.path !== path);
-    cur.classList.remove('hidden');
-    prevs.forEach((p) => p.component.classList.add('hidden'));
+    const currentComponent = (_c = (_b = routers.find((route) => route.path === path)) === null || _b === void 0 ? void 0 : _b.component) !== null && _c !== void 0 ? _c : (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management');
+    const prevRoute = routers.filter((route) => route.path !== path);
+    currentComponent.classList.remove('hidden');
+    prevRoute.forEach((p) => p.component.classList.add('hidden'));
 };
 const routers = [
     { path: baseURL + '/', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management') },
@@ -1292,8 +1292,8 @@ const updateProductValidator = {
         if (targetName === name) {
             return false;
         }
-        const filterArr = products.filter((product) => product.name !== targetName);
-        return filterArr.some((product) => product.name === name);
+        const filteredProducts = products.filter((product) => product.name !== targetName);
+        return filteredProducts.some((product) => product.name === name);
     },
     isIncorrectUnit(price) {
         return price % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.UNIT !== 0;
