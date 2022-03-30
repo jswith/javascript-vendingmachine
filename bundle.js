@@ -835,9 +835,14 @@ __webpack_require__.r(__webpack_exports__);
 const nav = document.querySelector('.nav');
 const baseURL = '/javascript-vendingmachine';
 nav.addEventListener('click', (e) => {
-    historyRouterPush(e.target.getAttribute('route'));
+    if (e.target.type === undefined)
+        return;
+    const route = e.target.getAttribute('route');
+    historyRouterPush(route);
 });
 const historyRouterPush = (pathname) => {
+    if (pathname === window.location.pathname)
+        return;
     history.pushState({ pathname }, '', pathname);
     render(pathname);
 };
@@ -848,7 +853,7 @@ const render = (path) => {
     const currentComponent = (_c = (_b = routers.find((route) => route.path === path)) === null || _b === void 0 ? void 0 : _b.component) !== null && _c !== void 0 ? _c : (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management');
     const prevRoute = routers.filter((route) => route.path !== path);
     currentComponent.classList.remove('hidden');
-    prevRoute.forEach((p) => p.component.classList.add('hidden'));
+    prevRoute.forEach((router) => router.component.classList.add('hidden'));
 };
 const routers = [
     { path: baseURL + '/', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management') },
@@ -858,7 +863,7 @@ window.addEventListener('popstate', function () {
     render(window.location.pathname);
 });
 if (window.location.pathname === '/') {
-    window.location.pathname = baseURL;
+    window.location.pathname = baseURL + '/';
 }
 render(window.location.pathname);
 
