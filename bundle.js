@@ -1123,10 +1123,10 @@ class ProductManagement extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["def
     showForm(e) {
         const item = e.target.closest('.product-item');
         const { productName, productId } = item.dataset;
-        const values = [...item.getElementsByTagName('td')].slice(0, 3).map((td) => td.textContent);
-        const name = values[0];
-        const price = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.deleteSeparator)(values[1]);
-        const quantity = values[2];
+        const [name, priceWithSeperator, quantity] = [...item.getElementsByTagName('td')]
+            .slice(0, 3)
+            .map((td) => td.textContent);
+        const price = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.deleteSeparator)(priceWithSeperator);
         item.innerHTML = `
       <tr class="product-item" data-product-name="${productName}" data-product-id="${productId}">
         <td><form id="product-edit-form-${productName}" class="product-item__form"><input form="product-edit-form-${productName}" name="name" maxlength="10" value="${name}" required/></form></td>
@@ -1149,14 +1149,16 @@ class ProductManagement extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["def
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.emit)('#product-list-table', '@update', { targetName, name, price, quantity }, this);
     }
     notify(action, _, product) {
-        if (action === 'add') {
-            this.insertItem(product);
-        }
-        if (action === 'update') {
-            this.updateItem(product);
-        }
-        if (action === 'delete') {
-            this.deleteItem(product);
+        switch (action) {
+            case 'add':
+                this.insertItem(product);
+                break;
+            case 'update':
+                this.updateItem(product);
+                break;
+            case 'delete':
+                this.deleteItem(product);
+                break;
         }
     }
     insertItem(product) {
