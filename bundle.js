@@ -663,6 +663,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const COINS = [10, 50, 100, 500];
 const CONFIGURATION = {
+    NAME: {
+        MAX_LENGTH: 10,
+    },
     AMOUNT: {
         UNIT: 10,
         MAX: 100000,
@@ -670,6 +673,14 @@ const CONFIGURATION = {
     PRICE: {
         UNIT: 10,
         MIN: 100,
+        MAX: 10000,
+    },
+    QUANTITY: {
+        MIN: 1,
+        MAX: 20,
+    },
+    INPUT: {
+        MIN: 10,
         MAX: 10000,
     },
 };
@@ -713,7 +724,7 @@ class Coin {
     getAmount() {
         return Object.entries(this).reduce((previous, [key, value]) => previous + value * Number(key), 0);
     }
-    genarateRandomCoin(amount) {
+    generateRandomCoin(amount) {
         let remainingAmount = amount;
         while (remainingAmount > 0) {
             const randomCoin = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.pickRandomElement)(_constants__WEBPACK_IMPORTED_MODULE_0__.COINS);
@@ -798,6 +809,7 @@ class VendingMachine {
     subscribeChargeTab() {
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.charge-form', '@charge', (e) => this.charge(e.detail.change), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('charge-tab'));
     }
+    subscribePurchaseTab() { }
     dispatch(key, action, product) {
         const targets = this.observers.filter((observer) => observer.key === key);
         targets.forEach((target) => target.element.notify(action, this.amount, product));
@@ -863,7 +875,7 @@ class VendingMachine {
     charge(inputMoney) {
         try {
             this.validateChange(inputMoney, this.amount.getAmount());
-            this.amount.genarateRandomCoin(inputMoney);
+            this.amount.generateRandomCoin(inputMoney);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('amount', this.amount);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.CHARGE, 'update');
         }
@@ -965,6 +977,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants.ts");
+
 const TEMPLATE = {
     PRODUCT_MANAGEMENT: `
     <section class="tab__product-manage-tab">
@@ -972,9 +986,9 @@ const TEMPLATE = {
       <form class="product-manage-form">
         <fieldset>
           <legend>추가할 상품 정보를 입력해주세요.</legend>
-          <input type="text" name="name" placeholder="상품명" maxlength="10" required />
-          <input type="number" name="price" placeholder="가격" min="100" max="10000" required />
-          <input type="number" name="quantity" placeholder="수량" min="1" max="20" required />
+          <input type="text" name="name" placeholder="상품명" maxlength="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.NAME.MAX_LENGTH}" required />
+          <input type="number" name="price" placeholder="가격" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.MAX}" required />
+          <input type="number" name="quantity" placeholder="수량" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.QUANTITY.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.QUANTITY.MAX}" required />
           <button type="submit" class="product-manage-form__add-button submit-button">추가</button>
         </fieldset>
       </form>
@@ -999,7 +1013,7 @@ const TEMPLATE = {
       <h2 hidden>잔돈 충전 화면</h2>
       <form class="charge-form">
         <label>자판기가 보유할 금액을 입력해주세요.</label>
-        <input type="number" name="change" placeholder="금액" min="10" max="100000" required />
+        <input type="number" name="change" placeholder="금액" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.UNIT}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.MAX}" required />
         <button type="submit" class="charge-form__purchase-button submit-button">충전</button>
       </form>
       <p>현재 보유 금액: <span class="charge-amount">0</span>원</p>
@@ -1038,7 +1052,7 @@ const TEMPLATE = {
   <h2 hidden>잔돈 충전 화면</h2>
   <form class="purchase-form">
     <label>상품을 구매할 금액을 투입해주세요.</label>
-    <input type="number" name="purchase" placeholder="금액" min="10" max="10000" required />
+    <input type="number" name="purchase" placeholder="금액" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX}" required />
     <button type="submit" class="purchase-form__money-input-button submit-button">투입</button>
     <p>투입한 금액: <span class="purchase-form__money-input-amount">0</span>원</p>
   </form>
