@@ -676,6 +676,7 @@ const CONFIGURATION = {
 const ELEMENT_KEY = {
     PRODUCT: 'subscribeProductManagement',
     CHARGE: 'subscribeChargeTab',
+    PURCHASE: 'subscribePurchaseTab',
 };
 const ERROR_MESSAGE = {
     DUPLICATED_PRODUCT: '중복되는 상품이 존재합니다.',
@@ -912,6 +913,7 @@ const render = (path) => {
 const routers = [
     { path: baseURL + '/', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management') },
     { path: baseURL + '/charge', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('charge-tab') },
+    { path: baseURL + '/purchase', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('purchase-tab') },
 ];
 window.addEventListener('popstate', function () {
     render(window.location.pathname);
@@ -1032,6 +1034,59 @@ const TEMPLATE = {
       </table>
     </section>
 `,
+    PURCHASE_TAB: ` <section class="tab__purchase-tab">
+  <h2 hidden>잔돈 충전 화면</h2>
+  <form class="purchase-form">
+    <label>상품을 구매할 금액을 투입해주세요.</label>
+    <input type="number" name="purchase" placeholder="금액" min="10" max="10000" required />
+    <button type="submit" class="purchase-form__money-input-button submit-button">투입</button>
+    <p>투입한 금액: <span class="purchase-form__money-input-amount">0</span>원</p>
+  </form>
+  <table id="purchase-product-list-table">
+    <caption>
+      상품 현황
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">상품명</th>
+        <th scope="col">가격</th>
+        <th scope="col">수량</th>
+        <th scope="col">구매</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <table id="purchase-coin-list-table">
+    <caption>
+      잔돈 반환
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">동전</th>
+        <th scope="col">개수</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>500원</td>
+        <td><span class="purchase-coin-500-quantity">0</span>개</td>
+      </tr>
+      <tr>
+        <td>100원</td>
+        <td><span class="purchase-coin-100-quantity">0</span>개</td>
+      </tr>
+      <tr>
+        <td>50원</td>
+        <td><span class="purchase-coin-50-quantity">0</span>개</td>
+      </tr>
+      <tr>
+        <td>10원</td>
+        <td><span class="purchase-coin-10-quantity">0</span>개</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="purchase-return-button">반환</button>
+</section>`,
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TEMPLATE);
 
@@ -1255,6 +1310,44 @@ customElements.define('product-management', ProductManagement);
 
 /***/ }),
 
+/***/ "./src/ui/PurchaseTab.ts":
+/*!*******************************!*\
+  !*** ./src/ui/PurchaseTab.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CustomElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CustomElement */ "./src/ui/CustomElement.ts");
+/* harmony import */ var _domain_VendingMachine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../domain/VendingMachine */ "./src/domain/VendingMachine.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../templates */ "./src/templates.ts");
+
+
+
+
+class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    connectedCallback() {
+        super.connectedCallback();
+        _domain_VendingMachine__WEBPACK_IMPORTED_MODULE_1__["default"].instance.observe(_constants__WEBPACK_IMPORTED_MODULE_2__.ELEMENT_KEY.PURCHASE, this);
+    }
+    render() {
+        this.innerHTML = this.template();
+    }
+    template() {
+        return _templates__WEBPACK_IMPORTED_MODULE_3__["default"].PURCHASE_TAB;
+    }
+    setEvent() { }
+    notify() { }
+}
+customElements.define('purchase-tab', PurchaseTab);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PurchaseTab);
+
+
+/***/ }),
+
 /***/ "./src/utils.ts":
 /*!**********************!*\
   !*** ./src/utils.ts ***!
@@ -1426,7 +1519,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
 /* harmony import */ var _ui_ProductManagement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui/ProductManagement */ "./src/ui/ProductManagement.ts");
 /* harmony import */ var _ui_ChargeTab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/ChargeTab */ "./src/ui/ChargeTab.ts");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./src/router.ts");
+/* harmony import */ var _ui_PurchaseTab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/PurchaseTab */ "./src/ui/PurchaseTab.ts");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./router */ "./src/router.ts");
+
 
 
 
