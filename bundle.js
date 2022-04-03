@@ -924,9 +924,9 @@ const render = (path) => {
     prevRoute.forEach((router) => router.component.classList.add('hidden'));
 };
 const routers = [
-    { path: baseURL + '/', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management') },
-    { path: baseURL + '/charge', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('charge-tab') },
-    { path: baseURL + '/purchase', component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('purchase-tab') },
+    { path: `${baseURL}/`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management') },
+    { path: `${baseURL}/charge`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('charge-tab') },
+    { path: `${baseURL}/purchase`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('purchase-tab') },
 ];
 window.addEventListener('popstate', function () {
     render(window.location.pathname);
