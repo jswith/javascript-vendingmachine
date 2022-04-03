@@ -59,7 +59,7 @@ ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_product_manage_ta
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_charge_tab_css__WEBPACK_IMPORTED_MODULE_4__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_purchase_tab_css__WEBPACK_IMPORTED_MODULE_5__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAKA;EACE,yCAAyC;EACzC,+BAA+B;EAC/B,6BAA6B;EAC7B,6BAA6B;EAC7B,0BAA0B;EAC1B,kCAAkC;EAClC,iCAAiC;AACnC;;AAEA;EACE,qBAAqB;EACrB,gCAAgC;EAChC,kBAAkB;EAClB,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;AACvB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,yCAAyC;EACzC,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,2CAA2C;EAC3C,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;;EAEE,wBAAwB;EACxB,SAAS;AACX;;AAEA;EACE,aAAa;AACf","sourcesContent":["@import './table.css';\n@import './product-manage-tab.css';\n@import './charge-tab.css';\n@import './purchase-tab.css';\n\n:root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n\na {\n  text-decoration: none;\n}\n\na:link {\n  color: var(--primary-font-color);\n}\n\na:visited {\n  color: var(--primary-font-color);\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAKA;EACE,yCAAyC;EACzC,+BAA+B;EAC/B,6BAA6B;EAC7B,6BAA6B;EAC7B,0BAA0B;EAC1B,kCAAkC;EAClC,iCAAiC;AACnC;;AAEA;EACE,qBAAqB;EACrB,gCAAgC;EAChC,kBAAkB;EAClB,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;AACvB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,yCAAyC;EACzC,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,2CAA2C;EAC3C,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;;EAEE,wBAAwB;EACxB,SAAS;AACX;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,gCAAgC;AAClC;;AAEA;EACE,gCAAgC;AAClC","sourcesContent":["@import './table.css';\n@import './product-manage-tab.css';\n@import './charge-tab.css';\n@import './purchase-tab.css';\n\n:root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n\na {\n  text-decoration: none;\n}\n\na:link {\n  color: var(--primary-font-color);\n}\n\na:visited {\n  color: var(--primary-font-color);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -696,6 +696,7 @@ const ERROR_MESSAGE = {
     OVER_AMOUNT: `현재 보유 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.AMOUNT.MAX)}원을 초과할 수 없습니다!`,
     OVER_INPUT_MONEY: `투입 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.INPUT.MAX)}원을 초과할 수 없습니다!`,
     INCORRECT_UNIT_INPUT_MONEY: `금액은 ${CONFIGURATION.INPUT.MIN}원 단위로 나누어 떨어지는 금액으로 입력하세요.`,
+    NOT_ENOUGH_MONEY: `금액이 부족합니다.`,
 };
 
 
@@ -757,13 +758,13 @@ class MoneyInput {
         this.amount = amount;
     }
     addMoney(money) {
-        this.amount += Number(money);
+        this.amount += money;
     }
     subtractMoney(money) {
-        this.amount -= Number(money);
+        this.amount -= money;
     }
     getAmount() {
-        return Number(this.amount);
+        return this.amount;
     }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MoneyInput);
@@ -790,6 +791,9 @@ class Product {
         this.name = product.name;
         this.price = product.price;
         this.quantity = product.quantity;
+    }
+    purchase() {
+        this.quantity -= 1;
     }
 }
 
@@ -844,6 +848,7 @@ class VendingMachine {
     }
     subscribePurchaseTab() {
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.purchase-form', '@input', (e) => this.inputMoney(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('purchase-tab'));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('#purchase-product-list-table', '@purchase', (e) => this.purchaseProduct(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('purchase-tab'));
     }
     dispatch(key, action, data) {
         const targets = this.observers.filter((observer) => observer.key === key);
@@ -902,6 +907,25 @@ class VendingMachine {
             const userMoney = this.moneyInput.getAmount();
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userMoney', userMoney);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'input', userMoney);
+        }
+        catch (error) {
+            alert(error.message);
+        }
+    }
+    purchaseProduct(targetName) {
+        try {
+            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validatePurchaseProduct)(targetName, this.products, this.moneyInput.getAmount());
+            const targetProduct = this.products.find((product) => product.name === targetName);
+            targetProduct.purchase();
+            this.moneyInput.subtractMoney(targetProduct.price);
+            if (targetProduct.quantity === 0) {
+                this.products = this.products.filter((product) => product.name !== targetName);
+            }
+            const userMoney = this.moneyInput.getAmount();
+            _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
+            _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userMoney', userMoney);
+            const { id, quantity } = targetProduct;
+            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'purchase', { id, quantity, userMoney });
         }
         catch (error) {
             alert(error.message);
@@ -1391,17 +1415,26 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
     setEvent() {
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.addEvent)(this, 'submit', '.purchase-form', (e) => this.handleMoneyInput(e));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.addEvent)(this, 'click', '.product-item', (e) => this.handlePurchaseProduct(e));
     }
     handleMoneyInput(e) {
         e.preventDefault();
         const moneyInput = e.target.moneyInput.valueAsNumber;
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.emit)('.purchase-form', '@input', moneyInput, this);
     }
+    handlePurchaseProduct(e) {
+        if (e.target.classList.contains('product-item__purchase-button')) {
+            const productName = e.target.closest('.product-item').dataset.productName;
+            (0,_utils__WEBPACK_IMPORTED_MODULE_5__.emit)('#purchase-product-list-table', '@purchase', productName, this);
+        }
+    }
     notify({ action, data }) {
         switch (action) {
             case 'input':
-                console.log(data);
                 this.updateUserInputMoney(data);
+                break;
+            case 'purchase':
+                this.purchaseItem(data);
                 break;
         }
     }
@@ -1418,6 +1451,15 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
     updateUserInputMoney(money) {
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(money);
+    }
+    purchaseItem({ id, quantity, userMoney }) {
+        const product = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${id}"]`, this);
+        const targetProductQuantity = product.children[2];
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(userMoney);
+        targetProductQuantity.textContent = quantity;
+        if (Number(targetProductQuantity.textContent) === 0) {
+            product.remove();
+        }
     }
 }
 customElements.define('purchase-tab', PurchaseTab);
@@ -1484,7 +1526,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "validateProduct": () => (/* binding */ validateProduct),
 /* harmony export */   "validateChange": () => (/* binding */ validateChange),
 /* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct),
-/* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney)
+/* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney),
+/* harmony export */   "validatePurchaseProduct": () => (/* binding */ validatePurchaseProduct)
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
@@ -1554,6 +1597,18 @@ const validateInputMoney = (money, userInputMoneyAmount) => {
     }
     if (userInputMoneyValidator.isIncorrectUnit(money)) {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_INPUT_MONEY);
+    }
+};
+const purchaseProductValidator = {
+    isNotEnoughMoney(targetName, products, userInputMoneyAmount) {
+        const targetProduct = products.find((product) => product.name === targetName);
+        const targetProductPrice = targetProduct.price;
+        return targetProductPrice > userInputMoneyAmount;
+    },
+};
+const validatePurchaseProduct = (targetName, products, userInputMoneyAmount) => {
+    if (purchaseProductValidator.isNotEnoughMoney(targetName, products, userInputMoneyAmount)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_ENOUGH_MONEY);
     }
 };
 
