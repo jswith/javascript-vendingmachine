@@ -812,7 +812,8 @@ class VendingMachine {
     subscribePurchaseTab() { }
     dispatch(key, action, product) {
         const targets = this.observers.filter((observer) => observer.key === key);
-        targets.forEach((target) => target.element.notify(action, this.amount, product));
+        const amount = this.amount;
+        targets.forEach((target) => target.element.notify({ action, amount, product }));
     }
     observe(key, element) {
         this.observers.push({ key, element });
@@ -1151,7 +1152,7 @@ class ChargeTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"] {
         const change = e.target.change.valueAsNumber;
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.emit)('.charge-form', '@charge', { change }, this);
     }
-    notify(_, amount, __) {
+    notify({ amount }) {
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('.charge-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.markUnit)(amount.getAmount());
         _constants__WEBPACK_IMPORTED_MODULE_5__.COINS.forEach((coin) => ((0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)(`.coin-${coin}-quantity`).textContent = amount[coin]));
     }
@@ -1184,7 +1185,7 @@ class CustomElement extends HTMLElement {
         return '';
     }
     setEvent() { }
-    notify(action, amount, product) { }
+    notify({}) { }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomElement);
 
@@ -1276,7 +1277,7 @@ class ProductManagement extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["def
         const quantity = e.target.quantity.valueAsNumber;
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.emit)('#product-list-table', '@update', { targetName, name, price, quantity }, this);
     }
-    notify(action, _, product) {
+    notify({ action, product }) {
         switch (action) {
             case 'add':
                 this.insertItem(product);
