@@ -694,6 +694,8 @@ const ERROR_MESSAGE = {
     INCORRECT_UNIT_PRODUCT_PRICE: `상품 가격은 ${CONFIGURATION.PRICE.UNIT}원 단위로 나누어 떨어지는 금액으로 입력하세요.`,
     INCORRECT_UNIT_CHARGE_MONEY: `금액은 ${CONFIGURATION.PRICE.UNIT}원 단위로 나누어 떨어지는 금액으로 입력하세요.`,
     OVER_AMOUNT: `현재 보유 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.AMOUNT.MAX)}원을 초과할 수 없습니다!`,
+    OVER_INPUT_MONEY: `투입 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.INPUT.MAX)}원을 초과할 수 없습니다!`,
+    INCORRECT_UNIT_INPUT_MONEY: `금액은 ${CONFIGURATION.INPUT.MIN}원 단위로 나누어 떨어지는 금액으로 입력하세요.`,
 };
 
 
@@ -740,6 +742,35 @@ class Coin {
 
 /***/ }),
 
+/***/ "./src/domain/MoneyInput.ts":
+/*!**********************************!*\
+  !*** ./src/domain/MoneyInput.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class MoneyInput {
+    constructor(amount) {
+        this.amount = amount;
+    }
+    addMoney(money) {
+        this.amount += Number(money);
+    }
+    subtractMoney(money) {
+        this.amount -= Number(money);
+    }
+    getAmount() {
+        return Number(this.amount);
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MoneyInput);
+
+
+/***/ }),
+
 /***/ "./src/domain/Product.ts":
 /*!*******************************!*\
   !*** ./src/domain/Product.ts ***!
@@ -782,6 +813,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../validator */ "./src/validator/index.ts");
 /* harmony import */ var _Coin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Coin */ "./src/domain/Coin.ts");
 /* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Product */ "./src/domain/Product.ts");
+/* harmony import */ var _MoneyInput__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MoneyInput */ "./src/domain/MoneyInput.ts");
 
 
 
@@ -794,6 +826,7 @@ class VendingMachine {
         this.observers = [];
         this.amount = new _Coin__WEBPACK_IMPORTED_MODULE_4__["default"](..._storage__WEBPACK_IMPORTED_MODULE_1__["default"].getAmount());
         this.products = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getProducts().map((product) => new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product, product.id));
+        this.moneyInput = new _MoneyInput__WEBPACK_IMPORTED_MODULE_6__["default"](_storage__WEBPACK_IMPORTED_MODULE_1__["default"].getUserMoney());
     }
     static get instance() {
         if (!VendingMachine._instance) {
@@ -809,43 +842,21 @@ class VendingMachine {
     subscribeChargeTab() {
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.charge-form', '@charge', (e) => this.charge(e.detail.change), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('charge-tab'));
     }
-    subscribePurchaseTab() { }
-    dispatch(key, action, product) {
+    subscribePurchaseTab() {
+        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.purchase-form', '@input', (e) => this.inputMoney(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('purchase-tab'));
+    }
+    dispatch(key, action, data) {
         const targets = this.observers.filter((observer) => observer.key === key);
         const amount = this.amount;
-        targets.forEach((target) => target.element.notify({ action, amount, product }));
+        targets.forEach((target) => target.element.notify({ action, amount, data }));
     }
     observe(key, element) {
         this.observers.push({ key, element });
         this[key]();
     }
-    validateProduct(product, products) {
-        if (_validator__WEBPACK_IMPORTED_MODULE_3__.productValidator.isDuplicated(product.name, products)) {
-            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
-        }
-        if (_validator__WEBPACK_IMPORTED_MODULE_3__.productValidator.isIncorrectUnit(product.price)) {
-            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
-        }
-    }
-    validateUpdateProduct(targetName, name, price, products) {
-        if (_validator__WEBPACK_IMPORTED_MODULE_3__.updateProductValidator.isDuplicated(targetName, name, products)) {
-            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
-        }
-        if (_validator__WEBPACK_IMPORTED_MODULE_3__.updateProductValidator.isIncorrectUnit(price)) {
-            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
-        }
-    }
-    validateChange(inputMoney, currentChange) {
-        if (_validator__WEBPACK_IMPORTED_MODULE_3__.changeValidator.isOverMax(inputMoney, currentChange)) {
-            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_AMOUNT);
-        }
-        if (_validator__WEBPACK_IMPORTED_MODULE_3__.changeValidator.isIncorrectUnit(inputMoney)) {
-            throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_CHARGE_MONEY);
-        }
-    }
     addProduct(product) {
         try {
-            this.validateProduct(product, this.products);
+            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateProduct)(product, this.products);
             const newProduct = new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product);
             this.products.push(newProduct);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
@@ -857,7 +868,7 @@ class VendingMachine {
     }
     updateProduct({ targetName, name, price, quantity }) {
         try {
-            this.validateUpdateProduct(targetName, name, price, this.products);
+            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateUpdateProduct)(targetName, name, price, this.products);
             const currentProduct = this.products.find((product) => product.name === targetName);
             currentProduct.update({ name, price, quantity });
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
@@ -875,10 +886,22 @@ class VendingMachine {
     }
     charge(inputMoney) {
         try {
-            this.validateChange(inputMoney, this.amount.getAmount());
+            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateChange)(inputMoney, this.amount.getAmount());
             this.amount.generateRandomCoin(inputMoney);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('amount', this.amount);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.CHARGE, 'update');
+        }
+        catch (error) {
+            alert(error.message);
+        }
+    }
+    inputMoney(money) {
+        try {
+            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateInputMoney)(money, this.moneyInput.getAmount());
+            this.moneyInput.addMoney(money);
+            const userMoney = this.moneyInput.getAmount();
+            _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userMoney', userMoney);
+            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'input', userMoney);
         }
         catch (error) {
             alert(error.message);
@@ -961,6 +984,9 @@ const storage = {
     },
     getAmount() {
         return this.getLocalStorage('amount') ? Object.values(JSON.parse(this.getLocalStorage('amount'))) : [0, 0, 0, 0];
+    },
+    getUserMoney() {
+        return this.getLocalStorage('userMoney') ? JSON.parse(this.getLocalStorage('userMoney')) : 0;
     },
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (storage);
@@ -1053,7 +1079,7 @@ const TEMPLATE = {
   <h2 hidden>잔돈 충전 화면</h2>
   <form class="purchase-form">
     <label>상품을 구매할 금액을 투입해주세요.</label>
-    <input type="number" name="purchase" placeholder="금액" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX}" required />
+    <input type="number" name="moneyInput" placeholder="금액" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX}" required />
     <button type="submit" class="purchase-form__money-input-button submit-button">투입</button>
     <p>투입한 금액: <span class="purchase-form__money-input-amount">0</span>원</p>
   </form>
@@ -1277,7 +1303,7 @@ class ProductManagement extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["def
         const quantity = e.target.quantity.valueAsNumber;
         (0,_utils__WEBPACK_IMPORTED_MODULE_2__.emit)('#product-list-table', '@update', { targetName, name, price, quantity }, this);
     }
-    notify({ action, product }) {
+    notify({ action, data: product }) {
         switch (action) {
             case 'add':
                 this.insertItem(product);
@@ -1339,6 +1365,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _domain_VendingMachine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../domain/VendingMachine */ "./src/domain/VendingMachine.ts");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 /* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../templates */ "./src/templates.ts");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
+
+
+
 
 
 
@@ -1350,12 +1381,44 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
     render() {
         this.innerHTML = this.template();
+        const userInputMoney = _storage__WEBPACK_IMPORTED_MODULE_4__["default"].getUserMoney();
+        const products = _storage__WEBPACK_IMPORTED_MODULE_4__["default"].getProducts();
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(userInputMoney);
+        products.forEach((product) => this.insertItem(product));
     }
     template() {
         return _templates__WEBPACK_IMPORTED_MODULE_3__["default"].PURCHASE_TAB;
     }
-    setEvent() { }
-    notify() { }
+    setEvent() {
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.addEvent)(this, 'submit', '.purchase-form', (e) => this.handleMoneyInput(e));
+    }
+    handleMoneyInput(e) {
+        e.preventDefault();
+        const moneyInput = e.target.moneyInput.valueAsNumber;
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.emit)('.purchase-form', '@input', moneyInput, this);
+    }
+    notify({ action, data }) {
+        switch (action) {
+            case 'input':
+                console.log(data);
+                this.updateUserInputMoney(data);
+                break;
+        }
+    }
+    insertItem(product) {
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('tbody', this).insertAdjacentHTML('beforeend', `<tr class="product-item" data-product-name="${product.name}" data-product-id="${product.id}">
+          <td>${product.name}</td>
+          <td>${(0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(product.price)}</td>
+          <td>${product.quantity}</td>
+          <td class="product-item__button">
+            <button type="button" class="product-item__purchase-button button">구매</button>
+          </td>
+       </tr>
+      `);
+    }
+    updateUserInputMoney(money) {
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(money);
+    }
 }
 customElements.define('purchase-tab', PurchaseTab);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PurchaseTab);
@@ -1418,9 +1481,10 @@ const deleteSeparator = (price) => parseInt(price.replace(',', ''), 10);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "productValidator": () => (/* binding */ productValidator),
-/* harmony export */   "changeValidator": () => (/* binding */ changeValidator),
-/* harmony export */   "updateProductValidator": () => (/* binding */ updateProductValidator)
+/* harmony export */   "validateProduct": () => (/* binding */ validateProduct),
+/* harmony export */   "validateChange": () => (/* binding */ validateChange),
+/* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct),
+/* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney)
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
@@ -1432,6 +1496,14 @@ const productValidator = {
         return price % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.UNIT !== 0;
     },
 };
+const validateProduct = (product, products) => {
+    if (productValidator.isDuplicated(product.name, products)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
+    }
+    if (productValidator.isIncorrectUnit(product.price)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
+    }
+};
 const changeValidator = {
     isOverMax(inputMoney, currentChange) {
         return inputMoney + currentChange > _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.MAX;
@@ -1439,6 +1511,14 @@ const changeValidator = {
     isIncorrectUnit(inputMoney) {
         return inputMoney % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.UNIT !== 0;
     },
+};
+const validateChange = (inputMoney, currentChange) => {
+    if (changeValidator.isOverMax(inputMoney, currentChange)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_AMOUNT);
+    }
+    if (changeValidator.isIncorrectUnit(inputMoney)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_CHARGE_MONEY);
+    }
 };
 const updateProductValidator = {
     isDuplicated(targetName, name, products) {
@@ -1451,6 +1531,30 @@ const updateProductValidator = {
     isIncorrectUnit(price) {
         return price % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.UNIT !== 0;
     },
+};
+const validateUpdateProduct = (targetName, name, price, products) => {
+    if (updateProductValidator.isDuplicated(targetName, name, products)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
+    }
+    if (updateProductValidator.isIncorrectUnit(price)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
+    }
+};
+const userInputMoneyValidator = {
+    isOverMax(currentInputMoney, userInputMoney) {
+        return currentInputMoney + userInputMoney > _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX;
+    },
+    isIncorrectUnit(inputMoney) {
+        return inputMoney % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.UNIT !== 0;
+    },
+};
+const validateInputMoney = (money, userInputMoneyAmount) => {
+    if (userInputMoneyValidator.isOverMax(money, userInputMoneyAmount)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_INPUT_MONEY);
+    }
+    if (userInputMoneyValidator.isIncorrectUnit(money)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_INPUT_MONEY);
+    }
 };
 
 
