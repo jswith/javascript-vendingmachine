@@ -1575,7 +1575,7 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
     updateChange({ userMoney, change, chargedCoin }) {
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(userMoney);
-        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.charge-amount').textContent = chargedCoin.getAmount();
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.charge-amount').textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(chargedCoin.getAmount());
         _constants__WEBPACK_IMPORTED_MODULE_2__.COINS.forEach((coin) => ((0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`.coin-${coin}-quantity`).textContent = String(chargedCoin[coin])));
         _constants__WEBPACK_IMPORTED_MODULE_2__.COINS.forEach((coin) => ((0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`.purchase-coin-${coin}-quantity`).textContent = String(change[coin])));
     }
