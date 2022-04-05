@@ -73,7 +73,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_charge_tab_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./charge-tab.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/charge-tab.css");
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_purchase_tab_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./purchase-tab.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/purchase-tab.css");
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_auth_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./auth.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/auth.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_snackbar_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./snackbar.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/snackbar.css");
 // Imports
+
 
 
 
@@ -87,8 +89,9 @@ ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_product_manage_ta
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_charge_tab_css__WEBPACK_IMPORTED_MODULE_4__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_purchase_tab_css__WEBPACK_IMPORTED_MODULE_5__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_auth_css__WEBPACK_IMPORTED_MODULE_6__["default"]);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_snackbar_css__WEBPACK_IMPORTED_MODULE_7__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAMA;EACE,yCAAyC;EACzC,+BAA+B;EAC/B,6BAA6B;EAC7B,6BAA6B;EAC7B,0BAA0B;EAC1B,kCAAkC;EAClC,iCAAiC;AACnC;;AAEA;EACE,qBAAqB;EACrB,gCAAgC;EAChC,kBAAkB;EAClB,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;EACrB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,yCAAyC;EACzC,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,2CAA2C;EAC3C,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;;EAEE,wBAAwB;EACxB,SAAS;AACX;;AAEA;EACE,aAAa;AACf","sourcesContent":["@import './table.css';\n@import './product-manage-tab.css';\n@import './charge-tab.css';\n@import './purchase-tab.css';\n@import './auth.css';\n\n:root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAOA;EACE,yCAAyC;EACzC,+BAA+B;EAC/B,6BAA6B;EAC7B,6BAA6B;EAC7B,0BAA0B;EAC1B,kCAAkC;EAClC,iCAAiC;AACnC;;AAEA;EACE,qBAAqB;EACrB,gCAAgC;EAChC,kBAAkB;EAClB,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;EACrB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,yCAAyC;EACzC,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,2CAA2C;EAC3C,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;;EAEE,wBAAwB;EACxB,SAAS;AACX;;AAEA;EACE,aAAa;AACf","sourcesContent":["@import './table.css';\n@import './product-manage-tab.css';\n@import './charge-tab.css';\n@import './purchase-tab.css';\n@import './auth.css';\n@import './snackbar.css';\n\n:root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -141,6 +144,32 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".purchase-form label {\n  display: block;\n}\n\n.purchase-form input {\n  width: 300px;\n}\n\n.purchase-return-button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.tab__purchase-tab {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n", "",{"version":3,"sources":["webpack://./src/css/purchase-tab.css"],"names":[],"mappings":"AAAA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;AACd;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB","sourcesContent":[".purchase-form label {\n  display: block;\n}\n\n.purchase-form input {\n  width: 300px;\n}\n\n.purchase-return-button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.tab__purchase-tab {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/css/snackbar.css":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/css/snackbar.css ***!
+  \********************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --snack-bar-font-color: #fff;\n  --snack-bar-background-color: #333;\n}\n\n#snack-bar {\n  visibility: hidden;\n  min-width: 250px;\n  margin-left: -125px;\n  background-color: var(--snack-bar-background-color);\n  color: var(--snack-bar-font-color);\n  text-align: center;\n  border-radius: 2px;\n  padding: 16px;\n  position: fixed;\n  z-index: 1;\n  left: 50%;\n  bottom: 30px;\n}\n\n#snack-bar.show {\n  visibility: visible;\n  animation: fadein 0.5s, fadeout 0.5s 1.5s;\n  animation-fill-mode: forwards;\n}\n\n@keyframes fadein {\n  from {\n    bottom: 0;\n    opacity: 0;\n  }\n  to {\n    bottom: 30px;\n    opacity: 1;\n  }\n}\n\n@keyframes fadeout {\n  from {\n    bottom: 30px;\n    opacity: 1;\n  }\n  to {\n    bottom: 0;\n    opacity: 0;\n  }\n}\n", "",{"version":3,"sources":["webpack://./src/css/snackbar.css"],"names":[],"mappings":"AAAA;EACE,4BAA4B;EAC5B,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,gBAAgB;EAChB,mBAAmB;EACnB,mDAAmD;EACnD,kCAAkC;EAClC,kBAAkB;EAClB,kBAAkB;EAClB,aAAa;EACb,eAAe;EACf,UAAU;EACV,SAAS;EACT,YAAY;AACd;;AAEA;EACE,mBAAmB;EACnB,yCAAyC;EACzC,6BAA6B;AAC/B;;AAEA;EACE;IACE,SAAS;IACT,UAAU;EACZ;EACA;IACE,YAAY;IACZ,UAAU;EACZ;AACF;;AAEA;EACE;IACE,YAAY;IACZ,UAAU;EACZ;EACA;IACE,SAAS;IACT,UAAU;EACZ;AACF","sourcesContent":[":root {\n  --snack-bar-font-color: #fff;\n  --snack-bar-background-color: #333;\n}\n\n#snack-bar {\n  visibility: hidden;\n  min-width: 250px;\n  margin-left: -125px;\n  background-color: var(--snack-bar-background-color);\n  color: var(--snack-bar-font-color);\n  text-align: center;\n  border-radius: 2px;\n  padding: 16px;\n  position: fixed;\n  z-index: 1;\n  left: 50%;\n  bottom: 30px;\n}\n\n#snack-bar.show {\n  visibility: visible;\n  animation: fadein 0.5s, fadeout 0.5s 1.5s;\n  animation-fill-mode: forwards;\n}\n\n@keyframes fadein {\n  from {\n    bottom: 0;\n    opacity: 0;\n  }\n  to {\n    bottom: 30px;\n    opacity: 1;\n  }\n}\n\n@keyframes fadeout {\n  from {\n    bottom: 30px;\n    opacity: 1;\n  }\n  to {\n    bottom: 0;\n    opacity: 0;\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -685,6 +714,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "COINS": () => (/* binding */ COINS),
 /* harmony export */   "COINS_REVERSE": () => (/* binding */ COINS_REVERSE),
+/* harmony export */   "SNACK_BAR_SHOWING_TIME_IN_MS": () => (/* binding */ SNACK_BAR_SHOWING_TIME_IN_MS),
 /* harmony export */   "CONFIGURATION": () => (/* binding */ CONFIGURATION),
 /* harmony export */   "ELEMENT_KEY": () => (/* binding */ ELEMENT_KEY),
 /* harmony export */   "ERROR_MESSAGE": () => (/* binding */ ERROR_MESSAGE)
@@ -693,6 +723,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const COINS = [10, 50, 100, 500];
 const COINS_REVERSE = [500, 100, 50, 10];
+const SNACK_BAR_SHOWING_TIME_IN_MS = 2000;
 const CONFIGURATION = {
     NAME: {
         MAX_LENGTH: 10,
@@ -727,7 +758,7 @@ const ERROR_MESSAGE = {
     OVER_AMOUNT: `현재 보유 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.AMOUNT.MAX)}원을 초과할 수 없습니다!`,
     OVER_INPUT_MONEY: `투입 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.INPUT.MAX)}원을 초과할 수 없습니다!`,
     INCORRECT_UNIT_INPUT_MONEY: `금액은 ${CONFIGURATION.INPUT.MIN}원 단위로 나누어 떨어지는 금액으로 입력하세요.`,
-    NOT_ENOUGH_MONEY: `금액이 부족합니다.`,
+    NOT_ENOUGH_MONEY: `잔액이 부족합니다.`,
 };
 
 
@@ -785,7 +816,7 @@ class Auth {
                 }
             }
             catch (e) {
-                alert(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.showSnackBar)(e.message);
             }
             // 로그인 페이지 전환 로직 추가
         });
@@ -813,7 +844,7 @@ class Auth {
                 _storage__WEBPACK_IMPORTED_MODULE_0__["default"].setLocalStorage('accessToken', accessToken);
             }
             catch (e) {
-                alert(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.showSnackBar)(e.message);
             }
             // 메인 페이지 전환 로직
             // nav 탭 표시
@@ -845,7 +876,7 @@ class Auth {
                 _storage__WEBPACK_IMPORTED_MODULE_0__["default"].setLocalStorage('userInfo', { email, userName, id });
             }
             catch (e) {
-                alert(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.showSnackBar)(e.message);
             }
         });
     }
@@ -1074,7 +1105,7 @@ class VendingMachine {
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'add', newProduct);
         }
         catch (error) {
-            alert(error.message);
+            (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
     updateProduct({ targetName, name, price, quantity }) {
@@ -1086,7 +1117,7 @@ class VendingMachine {
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'update', currentProduct);
         }
         catch (error) {
-            alert(error.message);
+            (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
     deleteProduct(targetName) {
@@ -1103,7 +1134,7 @@ class VendingMachine {
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.CHARGE, 'update', this.amount);
         }
         catch (error) {
-            alert(error.message);
+            (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
     inputMoney(money) {
@@ -1115,7 +1146,7 @@ class VendingMachine {
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'input', userMoney);
         }
         catch (error) {
-            alert(error.message);
+            (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
     purchaseProduct(targetName) {
@@ -1134,7 +1165,7 @@ class VendingMachine {
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'purchase', { id, quantity, userMoney });
         }
         catch (error) {
-            alert(error.message);
+            (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
     returnChange() {
@@ -1149,7 +1180,7 @@ class VendingMachine {
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'return', { userMoney, change, chargedCoin });
         }
         catch (error) {
-            alert(error.message);
+            (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
 }
@@ -1904,8 +1935,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "$": () => (/* binding */ $),
 /* harmony export */   "$$": () => (/* binding */ $$),
 /* harmony export */   "markUnit": () => (/* binding */ markUnit),
-/* harmony export */   "deleteSeparator": () => (/* binding */ deleteSeparator)
+/* harmony export */   "deleteSeparator": () => (/* binding */ deleteSeparator),
+/* harmony export */   "showSnackBar": () => (/* binding */ showSnackBar)
 /* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants.ts");
+
 const pickRandomElement = (array) => {
     return array[Math.floor(Math.random() * array.length)];
 };
@@ -1932,6 +1966,14 @@ const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
 const markUnit = (price) => price.toLocaleString();
 const deleteSeparator = (price) => parseInt(price.replace(',', ''), 10);
+const showSnackBar = (message) => {
+    const $snackBar = $('#snack-bar');
+    $snackBar.classList.add('show');
+    $snackBar.textContent = message;
+    setTimeout(() => {
+        $snackBar.classList.remove('show');
+    }, _constants__WEBPACK_IMPORTED_MODULE_0__.SNACK_BAR_SHOWING_TIME_IN_MS);
+};
 
 
 /***/ }),
