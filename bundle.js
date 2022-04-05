@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signin-form a {\n  text-decoration: none;\n}\n\n.signin-form a:link {\n  color: #3581d7;\n}\n\n.signin-form a:visited {\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n}\n\n.select-box {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  padding: 5px;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 10px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n}\n", "",{"version":3,"sources":["webpack://./src/css/auth.css"],"names":[],"mappings":"AAAA;;;EAGE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;AACxB;;AAEA;;;EAGE,sBAAsB;AACxB;;AAEA;;;EAGE,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;;;EAGE,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,yBAAyB;EACzB,SAAS;EACT,kBAAkB;EAClB,WAAW;EACX,eAAe;AACjB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;EACnB,YAAY;EACZ,YAAY;EACZ,eAAe;AACjB;;AAEA;;EAEE,aAAa;EACb,YAAY;AACd;;AAEA;EACE,6BAA6B;AAC/B","sourcesContent":[".signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signin-form a {\n  text-decoration: none;\n}\n\n.signin-form a:link {\n  color: #3581d7;\n}\n\n.signin-form a:visited {\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n}\n\n.select-box {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  padding: 5px;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 10px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n\n.signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signin-form a {\n  text-decoration: none;\n}\n\n.signin-form a:link {\n  color: #3581d7;\n}\n\n.signin-form a:visited {\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n}\n\n.select-box {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  padding: 5px;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 10px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n}\n", "",{"version":3,"sources":["webpack://./src/css/auth.css"],"names":[],"mappings":"AAAA;EACE,oBAAoB;EACpB,eAAe;AACjB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,WAAW;EACX,kBAAkB;EAClB,YAAY;EACZ,sBAAsB;EACtB,2BAA2B;EAC3B,eAAe;AACjB;;AAEA;;;EAGE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;AACxB;;AAEA;;;EAGE,sBAAsB;AACxB;;AAEA;;;EAGE,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;;;EAGE,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,yBAAyB;EACzB,SAAS;EACT,kBAAkB;EAClB,WAAW;EACX,eAAe;AACjB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;EACnB,YAAY;EACZ,YAAY;EACZ,eAAe;AACjB;;AAEA;;EAEE,aAAa;EACb,YAAY;AACd;;AAEA;EACE,6BAA6B;AAC/B","sourcesContent":[".login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n\n.signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signin-form a {\n  text-decoration: none;\n}\n\n.signin-form a:link {\n  color: #3581d7;\n}\n\n.signin-form a:visited {\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n}\n\n.select-box {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  padding: 5px;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 10px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -88,7 +88,7 @@ ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_charge_tab_css__W
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_purchase_tab_css__WEBPACK_IMPORTED_MODULE_5__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_auth_css__WEBPACK_IMPORTED_MODULE_6__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n\nh1 a {\n  text-decoration: none;\n}\n\nh1 a:link {\n  color: var(--primary-font-color);\n}\n\nh1 a:visited {\n  color: var(--primary-font-color);\n}\n\n.login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAMA;EACE,yCAAyC;EACzC,+BAA+B;EAC/B,6BAA6B;EAC7B,6BAA6B;EAC7B,0BAA0B;EAC1B,kCAAkC;EAClC,iCAAiC;AACnC;;AAEA;EACE,qBAAqB;EACrB,gCAAgC;EAChC,kBAAkB;EAClB,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;EACrB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,yCAAyC;EACzC,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,2CAA2C;EAC3C,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;;EAEE,wBAAwB;EACxB,SAAS;AACX;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,gCAAgC;AAClC;;AAEA;EACE,gCAAgC;AAClC;;AAEA;EACE,oBAAoB;EACpB,eAAe;AACjB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,WAAW;EACX,kBAAkB;EAClB,YAAY;EACZ,sBAAsB;EACtB,2BAA2B;EAC3B,eAAe;AACjB","sourcesContent":["@import './table.css';\n@import './product-manage-tab.css';\n@import './charge-tab.css';\n@import './purchase-tab.css';\n@import './auth.css';\n\n:root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n\nh1 a {\n  text-decoration: none;\n}\n\nh1 a:link {\n  color: var(--primary-font-color);\n}\n\nh1 a:visited {\n  color: var(--primary-font-color);\n}\n\n.login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAMA;EACE,yCAAyC;EACzC,+BAA+B;EAC/B,6BAA6B;EAC7B,6BAA6B;EAC7B,0BAA0B;EAC1B,kCAAkC;EAClC,iCAAiC;AACnC;;AAEA;EACE,qBAAqB;EACrB,gCAAgC;EAChC,kBAAkB;EAClB,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;EACrB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;EAClC,kBAAkB;EAClB,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,yCAAyC;EACzC,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,2CAA2C;EAC3C,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;;EAEE,wBAAwB;EACxB,SAAS;AACX;;AAEA;EACE,aAAa;AACf","sourcesContent":["@import './table.css';\n@import './product-manage-tab.css';\n@import './charge-tab.css';\n@import './purchase-tab.css';\n@import './auth.css';\n\n:root {\n  --primary-font-color: rgba(0, 0, 0, 0.87);\n  --secondary-font-color: #ffffff;\n  --input-border-color: #b4b4b4;\n  --table-border-color: #dcdcdc;\n  --button-bg-color: #f5f5f5;\n  --button-focus-bg-color: #00bcd429;\n  --submit-button-bg-color: #00bcd4;\n}\n\nbody {\n  font-family: 'Roboto';\n  color: var(--primary-font-color);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 24px;\n  letter-spacing: 0.5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nh1 {\n  margin: 32px 0;\n}\n\n#app {\n  width: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.nav {\n  margin-bottom: 52px;\n}\n\n.button {\n  background: var(--button-bg-color);\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  width: 100px;\n  height: 36px;\n}\n\n.focus-button {\n  background: var(--button-focus-bg-color);\n}\n\n.submit-button {\n  background: var(--submit-button-bg-color);\n  border-radius: 4px;\n  border: none;\n  color: var(--secondary-font-color);\n  cursor: pointer;\n  width: 56px;\n  height: 36px;\n}\n\ninput {\n  padding: 8px 8px;\n  border: 1px solid var(--input-border-color);\n  box-sizing: border-box;\n  border-radius: 4px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.hidden {\n  display: none;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1199,7 +1199,8 @@ const TEMPLATE = {
       </table>
     </section>
 `,
-    PURCHASE_TAB: ` <section class="tab__purchase-tab">
+    PURCHASE_TAB: ` 
+  <section class="tab__purchase-tab">
   <h2 hidden>잔돈 충전 화면</h2>
   <form class="purchase-form">
     <label>상품을 구매할 금액을 투입해주세요.</label>
@@ -1251,7 +1252,53 @@ const TEMPLATE = {
     </tbody>
   </table>
   <button type="button" class="purchase-return-button">반환</button>
-</section>`,
+</section>
+`,
+    SIGNIN_PAGE: `
+  <section class="signin">
+    <form class="signin-form">
+      <h1>로그인</h1>
+      <label for="signin-form__email">이메일</label>
+      <input id="signin-form__email" type="email" placeholder="woowacourse@gmail.com" />
+      <label for="signin-form__password">비밀번호</label>
+      <input id="signin-form__password" type="password" placeholder="비밀번호를 입력해주세요" />
+      <button type="submit">확인</button>
+      <p>아직 회원이 아니신가요? <a href="">회원가입</a></p>
+    </form>
+  </section>
+  `,
+    SIGNUP_PAGE: `
+  <section class="signup">
+    <form class="signup-form">
+      <h1>회원가입</h1>
+      <label for="signup-form__email">이메일</label>
+      <input id="signup-form__email" type="email" placeholder="이메일 주소를 입력해주세요" />
+      <label for="signup-form__name">이름</label>
+      <input id="signup-form__name" type="text" placeholder="이름을 입력해주세요" />
+      <label for="signup-form__password">비밀번호</label>
+      <input id="signup-form__password" type="password" placeholder="비밀번호를 입력해주세요" />
+      <label for="signup-form__password-confirm">비밀번호 확인</label>
+      <input id="signup-form__password-confirm" type="password" placeholder="비밀번호를 입력해주세요" />
+      <button type="submit">확인</button>
+    </form>
+  </section>
+`,
+    EDIT_PROFILE_PAGE: `
+  <section class="edit-profile">
+    <form class="edit-profile-form">
+      <h1>회원 정보 수정</h1>
+      <label for="edit-profile-form__email">이메일</label>
+      <input id="edit-profile-form__email" type="email" placeholder="woowacourse@gmail.com" disabled />
+      <label for="edit-profile-form__name">이름</label>
+      <input id="edit-profile-form__name" type="text" placeholder="우테코" />
+      <label for="edit-profile-form__password">비밀번호</label>
+      <input id="edit-profile-form__password" type="password" placeholder="비밀번호를 입력해주세요" />
+      <label for="edit-profile-form__password-confirm">비밀번호 확인</label>
+      <input id="edit-profile-form__password-confirm" type="password" placeholder="비밀번호를 입력해주세요" />
+      <button type="submit">확인</button>
+    </form>
+  </section>
+`,
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TEMPLATE);
 
@@ -1338,6 +1385,39 @@ class CustomElement extends HTMLElement {
     notify({}) { }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomElement);
+
+
+/***/ }),
+
+/***/ "./src/ui/EditProfilePage.ts":
+/*!***********************************!*\
+  !*** ./src/ui/EditProfilePage.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CustomElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CustomElement */ "./src/ui/CustomElement.ts");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../templates */ "./src/templates.ts");
+
+
+class EditProfilePage extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    connectedCallback() {
+        super.connectedCallback();
+    }
+    render() {
+        this.innerHTML = this.template();
+    }
+    template() {
+        return _templates__WEBPACK_IMPORTED_MODULE_1__["default"].EDIT_PROFILE_PAGE;
+    }
+    setEvent() { }
+    notify({}) { }
+}
+customElements.define('edit-profile', EditProfilePage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EditProfilePage);
 
 
 /***/ }),
@@ -1586,6 +1666,72 @@ customElements.define('purchase-tab', PurchaseTab);
 
 /***/ }),
 
+/***/ "./src/ui/SigninPage.ts":
+/*!******************************!*\
+  !*** ./src/ui/SigninPage.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CustomElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CustomElement */ "./src/ui/CustomElement.ts");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../templates */ "./src/templates.ts");
+
+
+class SigninPage extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    connectedCallback() {
+        super.connectedCallback();
+    }
+    render() {
+        this.innerHTML = this.template();
+    }
+    template() {
+        return _templates__WEBPACK_IMPORTED_MODULE_1__["default"].SIGNIN_PAGE;
+    }
+    setEvent() { }
+    notify({}) { }
+}
+customElements.define('sign-in', SigninPage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SigninPage);
+
+
+/***/ }),
+
+/***/ "./src/ui/SignupPage.ts":
+/*!******************************!*\
+  !*** ./src/ui/SignupPage.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CustomElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CustomElement */ "./src/ui/CustomElement.ts");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../templates */ "./src/templates.ts");
+
+
+class SignupPage extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    connectedCallback() {
+        super.connectedCallback();
+    }
+    render() {
+        this.innerHTML = this.template();
+    }
+    template() {
+        return _templates__WEBPACK_IMPORTED_MODULE_1__["default"].SIGNUP_PAGE;
+    }
+    setEvent() { }
+    notify({}) { }
+}
+customElements.define('sign-up', SignupPage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SignupPage);
+
+
+/***/ }),
+
 /***/ "./src/utils.ts":
 /*!**********************!*\
   !*** ./src/utils.ts ***!
@@ -1812,7 +1958,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_ProductManagement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui/ProductManagement */ "./src/ui/ProductManagement.ts");
 /* harmony import */ var _ui_ChargeTab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/ChargeTab */ "./src/ui/ChargeTab.ts");
 /* harmony import */ var _ui_PurchaseTab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/PurchaseTab */ "./src/ui/PurchaseTab.ts");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./router */ "./src/router.ts");
+/* harmony import */ var _ui_SigninPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui/SigninPage */ "./src/ui/SigninPage.ts");
+/* harmony import */ var _ui_SignupPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ui/SignupPage */ "./src/ui/SignupPage.ts");
+/* harmony import */ var _ui_EditProfilePage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ui/EditProfilePage */ "./src/ui/EditProfilePage.ts");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./router */ "./src/router.ts");
+
+
+
 
 
 
