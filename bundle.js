@@ -996,7 +996,7 @@ class VendingMachine {
             const userMoney = userInputMoney.getAmount();
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userMoney', userMoney);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('amount', chargedCoin);
-            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'return', { userMoney, change });
+            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'return', { userMoney, change, chargedCoin });
         }
         catch (error) {
             alert(error.message);
@@ -1018,7 +1018,7 @@ VendingMachine._instance = null;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.ts");
 
-const nav = document.querySelector('.nav');
+const nav = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('.nav');
 const baseURL = '/javascript-vendingmachine';
 nav.addEventListener('click', (e) => {
     if (e.target.type === undefined)
@@ -1513,7 +1513,7 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
                 this.purchaseItem(data);
                 break;
             case 'return':
-                this.updatePurchasePage(data);
+                this.updateChange(data);
                 break;
         }
     }
@@ -1532,16 +1532,22 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(money);
     }
     purchaseItem({ id, quantity, userMoney }) {
-        const product = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${id}"]`, this);
-        const targetProductQuantity = product.children[2];
-        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(userMoney);
-        targetProductQuantity.textContent = quantity;
-        if (Number(targetProductQuantity.textContent) === 0) {
-            product.remove();
+        const purchasePageProduct = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${id}"]`, this);
+        const managementPageProduct = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${id}"]`, (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('#product-list-table'));
+        const purchasePageTargetProductQuantity = purchasePageProduct.children[2];
+        const managementPageTargetProductQuantity = managementPageProduct.children[2];
+        this.updateUserInputMoney(userMoney);
+        purchasePageTargetProductQuantity.textContent = quantity;
+        managementPageTargetProductQuantity.textContent = quantity;
+        if (Number(purchasePageTargetProductQuantity.textContent) === 0) {
+            purchasePageProduct.remove();
+            managementPageProduct.remove();
         }
     }
-    updatePurchasePage({ userMoney, change }) {
+    updateChange({ userMoney, change, chargedCoin }) {
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(userMoney);
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.charge-amount').textContent = chargedCoin.getAmount();
+        _constants__WEBPACK_IMPORTED_MODULE_2__.COINS.forEach((coin) => ((0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`.coin-${coin}-quantity`).textContent = String(chargedCoin[coin])));
         _constants__WEBPACK_IMPORTED_MODULE_2__.COINS.forEach((coin) => ((0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`.purchase-coin-${coin}-quantity`).textContent = String(change[coin])));
     }
 }
