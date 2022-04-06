@@ -759,6 +759,8 @@ const ERROR_MESSAGE = {
     OVER_INPUT_MONEY: `투입 금액은 ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.markUnit)(CONFIGURATION.INPUT.MAX)}원을 초과할 수 없습니다!`,
     INCORRECT_UNIT_INPUT_MONEY: `금액은 ${CONFIGURATION.INPUT.MIN}원 단위로 나누어 떨어지는 금액으로 입력하세요.`,
     NOT_ENOUGH_MONEY: `잔액이 부족합니다.`,
+    PASSWORD_CONFIRM: '비밀번호가 일치하지 않습니다. 다시 확인해주세요.',
+    DUPLICATED_EMAIL: '중복된 이메일이 존재합니다.',
 };
 
 
@@ -774,9 +776,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../router */ "./src/router.ts");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router */ "./src/router.ts");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -789,20 +792,22 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
+
 class Auth {
     constructor() {
-        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.signup-form', '@signup', (e) => this.signup(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('sign-up'));
-        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.signin-form', '@signin', (e) => this.signin(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('sign-in'));
-        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.edit-profile-form', '@editProfile', (e) => this.editProfile(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('edit-profile'));
+        this.SERVER_BASE_URL = 'https://js-vendingmachine-server.herokuapp.com';
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.on)('.signup-form', '@signup', (e) => this.signup(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('sign-up'));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.on)('.signin-form', '@signin', (e) => this.signin(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('sign-in'));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.on)('.edit-profile-form', '@editProfile', (e) => this.editProfile(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('edit-profile'));
     }
     signup(userInfo) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { email, userName, password, passwordConfirm } = userInfo;
                 if (password !== passwordConfirm) {
-                    throw new Error('비밀번호가 일치하지 않습니다.');
+                    throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.PASSWORD_CONFIRM);
                 }
-                const response = yield fetch('https://js-vendingmachine-server.herokuapp.com/signup', {
+                const response = yield fetch(`${this.SERVER_BASE_URL}/signup`, {
                     method: 'POST',
                     body: JSON.stringify({
                         email,
@@ -814,13 +819,12 @@ class Auth {
                     },
                 });
                 if (!response.ok) {
-                    throw new Error('중복된 이메일이 존재합니다.');
+                    throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_EMAIL);
                 }
-                // 로그인 페이지 전환 로직 추가
-                (0,_router__WEBPACK_IMPORTED_MODULE_0__.historyRouterPush)('/javascript-vendingmachine/signin');
+                (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/signin');
             }
             catch (e) {
-                (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_3__.showSnackBar)(e.message);
             }
         });
     }
@@ -828,7 +832,7 @@ class Auth {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { email, password } = userInfo;
-                const response = yield fetch('https://js-vendingmachine-server.herokuapp.com/signin', {
+                const response = yield fetch(`${this.SERVER_BASE_URL}/signin`, {
                     method: 'POST',
                     body: JSON.stringify({
                         email,
@@ -843,13 +847,12 @@ class Auth {
                 }
                 const loginUserDataResponse = yield response.json();
                 const { user, accessToken } = loginUserDataResponse;
-                _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userInfo', user);
-                _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('accessToken', accessToken);
-                // 메인 페이지 전환 로직
-                (0,_router__WEBPACK_IMPORTED_MODULE_0__.historyRouterPush)('/javascript-vendingmachine/');
+                _storage__WEBPACK_IMPORTED_MODULE_2__["default"].setLocalStorage('userInfo', user);
+                _storage__WEBPACK_IMPORTED_MODULE_2__["default"].setLocalStorage('accessToken', accessToken);
+                (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/');
             }
             catch (e) {
-                (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_3__.showSnackBar)(e.message);
             }
         });
     }
@@ -860,9 +863,9 @@ class Auth {
                 if (password !== passwordConfirm) {
                     throw new Error('비밀번호가 일치하지 않습니다.');
                 }
-                const userId = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getUserInfo().id;
-                const accessToken = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getAccessToken();
-                const response = yield fetch(`https://js-vendingmachine-server.herokuapp.com/users/${userId}`, {
+                const userId = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().id;
+                const accessToken = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getAccessToken();
+                const response = yield fetch(`${this.SERVER_BASE_URL}/users/${userId}`, {
                     method: 'PATCH',
                     body: JSON.stringify({
                         password,
@@ -875,12 +878,11 @@ class Auth {
                 });
                 const responseData = yield response.json();
                 const { email, userName, id } = responseData;
-                _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userInfo', { email, userName, id });
-                // 메인 페이지 전환 로직
-                (0,_router__WEBPACK_IMPORTED_MODULE_0__.historyRouterPush)('/javascript-vendingmachine/');
+                _storage__WEBPACK_IMPORTED_MODULE_2__["default"].setLocalStorage('userInfo', { email, userName, id });
+                (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/');
             }
             catch (e) {
-                (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_3__.showSnackBar)(e.message);
             }
         });
     }
