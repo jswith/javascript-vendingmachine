@@ -2010,6 +2010,7 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
     updateItem(product) {
         const item = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${product.id}"]`, (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('#purchase-product-list-table'));
+        item.dataset.productName = product.name;
         item.innerHTML = ` 
       <td>${product.name}</td>
       <td>${(0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(product.price)}</td>
