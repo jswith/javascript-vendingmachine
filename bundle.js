@@ -745,6 +745,9 @@ const CONFIGURATION = {
         MIN: 10,
         MAX: 10000,
     },
+    PASSWORD: {
+        MIN: 8,
+    },
 };
 const ELEMENT_KEY = {
     PRODUCT: 'subscribeProductManagement',
@@ -763,7 +766,7 @@ const ERROR_MESSAGE = {
     DUPLICATED_EMAIL: '중복된 이메일이 존재합니다.',
     NOT_MATCH_USER_INFO: '일치하는 정보가 없습니다.',
     EMPTY_CHANGE: '자판기에 보유중인 잔돈이 없습니다. 관리자에게 문의해주세요.',
-    NOT_MATCH_PASSWORD_REGEXP: '비밀번호는 8자 이상으로, 최소 하나의 문자 및 숫자를 포함해야 합니다.',
+    NOT_MATCH_PASSWORD_REGEXP: `비밀번호는 ${CONFIGURATION.PASSWORD.MIN}자 이상으로, 최소 하나의 문자 및 숫자를 포함해야 합니다.`,
 };
 
 
@@ -1474,7 +1477,7 @@ const TEMPLATE = {
   <h2 hidden>잔돈 충전 화면</h2>
   <form class="purchase-form">
     <label>상품을 구매할 금액을 투입해주세요.</label>
-    <input type="number" name="moneyInput" placeholder="금액" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX}" required />
+    <input type="number" class="purchase-form__money-input" name="moneyInput" placeholder="금액" min="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MIN}" max="${_constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX}" required />
     <button type="submit" class="purchase-form__money-input-button submit-button">투입</button>
     <p>투입한 금액: <span class="purchase-form__money-input-amount">0</span>원</p>
   </form>
@@ -1532,7 +1535,7 @@ const TEMPLATE = {
       <input id="signin-form__email" type="email" name="signinEmail" placeholder="woowacourse@gmail.com" required />
       <label for="signin-form__password">비밀번호</label>
       <input id="signin-form__password" type="password" name="signinPassword" placeholder="비밀번호를 입력해주세요" required />
-      <button type="submit">확인</button>
+      <button id="signin-form__button" type="submit">확인</button>
       <p>아직 회원이 아니신가요? <span class="signup-text">회원가입</span></p>
     </form>
   </section>
@@ -1549,7 +1552,7 @@ const TEMPLATE = {
       <input id="signup-form__password" type="password" name="signupPassword" placeholder="비밀번호를 입력해주세요" required/>
       <label for="signup-form__password-confirm">비밀번호 확인</label>
       <input id="signup-form__password-confirm" type="password" name="signupPasswordConfirm" placeholder="비밀번호를 입력해주세요" required/>
-      <button type="submit">확인</button>
+      <button id="signup-form__button" type="submit">확인</button>
     </form>
   </section>
 `,
@@ -1565,7 +1568,7 @@ const TEMPLATE = {
       <input id="edit-profile-form__password" type="password" name="editProfilePassword" placeholder="비밀번호를 입력해주세요" required/>
       <label for="edit-profile-form__password-confirm">비밀번호 확인</label>
       <input id="edit-profile-form__password-confirm" type="password" name="editProfilePasswordConfirm" placeholder="비밀번호를 입력해주세요" required/>
-      <button type="submit">확인</button>
+      <button id="edit-profile-form__button" type="submit">확인</button>
     </form>
   </section>
 `,
