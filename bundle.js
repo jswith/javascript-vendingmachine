@@ -1716,6 +1716,8 @@ class MainUI {
             (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box-wrapper').classList.add('hidden');
             (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.header').classList.add('hidden');
             (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.nav').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('#edit-profile-form__email').value = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().email;
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('#edit-profile-form__name').value = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().userName;
             (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/editprofile');
         });
         // 메인 페이지 로그인 버튼 history 추가
@@ -1738,8 +1740,8 @@ class MainUI {
         });
     }
     renderUI() {
-        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('#edit-profile-form__email').value = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().email;
-        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('#edit-profile-form__name').value = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().userName;
+        // ($('#edit-profile-form__email') as HTMLInputElement).value = storage.getUserInfo().email;
+        // ($('#edit-profile-form__name') as HTMLInputElement).value = storage.getUserInfo().userName;
         const accessToken = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getAccessToken();
         if (accessToken) {
             (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.login-button').classList.add('hidden');
