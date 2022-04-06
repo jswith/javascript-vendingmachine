@@ -763,6 +763,7 @@ const ERROR_MESSAGE = {
     DUPLICATED_EMAIL: '중복된 이메일이 존재합니다.',
     NOT_MATCH_USER_INFO: '일치하는 정보가 없습니다.',
     EMPTY_CHANGE: '자판기에 보유중인 잔돈이 없습니다. 관리자에게 문의해주세요.',
+    NOT_MATCH_PASSWORD_REGEXP: '비밀번호는 8자 이상으로, 최소 하나의 문자 및 숫자를 포함해야 합니다.',
 };
 
 
@@ -782,6 +783,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router */ "./src/router.ts");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
+/* harmony import */ var _validator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../validator */ "./src/validator/index.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -791,6 +793,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -806,9 +809,8 @@ class Auth {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { email, userName, password, passwordConfirm } = userInfo;
-                if (password !== passwordConfirm) {
-                    throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.PASSWORD_CONFIRM);
-                }
+                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordIsEqual)(password, passwordConfirm);
+                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordCondition)(password);
                 const response = yield fetch(`${this.SERVER_BASE_URL}/signup`, {
                     method: 'POST',
                     body: JSON.stringify({
@@ -862,9 +864,8 @@ class Auth {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { userName: editedName, password, passwordConfirm } = userInfo;
-                if (password !== passwordConfirm) {
-                    throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.PASSWORD_CONFIRM);
-                }
+                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordIsEqual)(password, passwordConfirm);
+                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordCondition)(password);
                 const userId = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().id;
                 const accessToken = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getAccessToken();
                 const response = yield fetch(`${this.SERVER_BASE_URL}/users/${userId}`, {
@@ -2194,7 +2195,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct),
 /* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney),
 /* harmony export */   "validatePurchaseProduct": () => (/* binding */ validatePurchaseProduct),
-/* harmony export */   "validateReturnCharge": () => (/* binding */ validateReturnCharge)
+/* harmony export */   "validateReturnCharge": () => (/* binding */ validateReturnCharge),
+/* harmony export */   "validatePasswordCondition": () => (/* binding */ validatePasswordCondition),
+/* harmony export */   "validatePasswordIsEqual": () => (/* binding */ validatePasswordIsEqual)
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
@@ -2286,6 +2289,24 @@ const returnChangeValidator = {
 const validateReturnCharge = (chargedCoin) => {
     if (returnChangeValidator.isEmptyChange(chargedCoin)) {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.EMPTY_CHANGE);
+    }
+};
+const passwordValidator = {
+    isNotEqual(password, passwordConfirm) {
+        return password !== passwordConfirm;
+    },
+    isInvalid(password) {
+        return !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
+    },
+};
+const validatePasswordCondition = (password) => {
+    if (passwordValidator.isInvalid(password)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_MATCH_PASSWORD_REGEXP);
+    }
+};
+const validatePasswordIsEqual = (password, passwordConfirm) => {
+    if (passwordValidator.isNotEqual(password, passwordConfirm)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.PASSWORD_CONFIRM);
     }
 };
 
