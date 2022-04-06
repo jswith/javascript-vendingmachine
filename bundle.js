@@ -1114,6 +1114,7 @@ class VendingMachine {
             this.products.push(newProduct);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'add', newProduct);
+            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'add', newProduct);
         }
         catch (error) {
             (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
@@ -1126,6 +1127,7 @@ class VendingMachine {
             currentProduct.update({ name, price, quantity });
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'update', currentProduct);
+            this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'update', currentProduct);
         }
         catch (error) {
             (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
@@ -1134,6 +1136,7 @@ class VendingMachine {
     deleteProduct(targetName) {
         const targetProduct = this.products.find((product) => product.name === targetName);
         this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'delete', targetProduct);
+        this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'delete', targetProduct);
         this.products = this.products.filter((product) => product.name !== targetName);
         _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
     }
@@ -1968,6 +1971,14 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
             case 'return':
                 this.updateChange(data);
                 break;
+            case 'add':
+                this.insertItem(data);
+            case 'update':
+                this.updateItem(data);
+                break;
+            case 'delete':
+                this.deleteItem(data);
+                break;
         }
     }
     insertItem(product) {
@@ -1980,6 +1991,20 @@ class PurchaseTab extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["default"]
           </td>
        </tr>
       `);
+    }
+    updateItem(product) {
+        const item = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${product.id}"]`, (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('#purchase-product-list-table'));
+        item.innerHTML = ` 
+      <td>${product.name}</td>
+      <td>${(0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(product.price)}</td>
+      <td>${product.quantity}</td>
+      <td class="product-item__button">
+        <button type="button" class="product-item__purchase-button button">구매</button>
+      </td>
+    `;
+    }
+    deleteItem(product) {
+        (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)(`[data-product-id="${product.id}"]`).remove();
     }
     updateUserInputMoney(money) {
         (0,_utils__WEBPACK_IMPORTED_MODULE_5__.$)('.purchase-form__money-input-amount', this).textContent = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.markUnit)(money);
