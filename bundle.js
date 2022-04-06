@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n\n.signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signin-form a {\n  text-decoration: none;\n}\n\n.signin-form a:link {\n  color: #3581d7;\n}\n\n.signin-form a:visited {\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n}\n\n.select-box {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  padding: 5px;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 10px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n}\n\n.select-box .select-box__edit-profile-button:hover,\n.select-box .select-box__logout-button:hover {\n  background-color: #98e2ec;\n}\n", "",{"version":3,"sources":["webpack://./src/css/auth.css"],"names":[],"mappings":"AAAA;EACE,oBAAoB;EACpB,eAAe;AACjB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,WAAW;EACX,kBAAkB;EAClB,YAAY;EACZ,sBAAsB;EACtB,2BAA2B;EAC3B,eAAe;AACjB;;AAEA;;;EAGE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;AACxB;;AAEA;;;EAGE,sBAAsB;AACxB;;AAEA;;;EAGE,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;;;EAGE,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,yBAAyB;EACzB,SAAS;EACT,kBAAkB;EAClB,WAAW;EACX,eAAe;AACjB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;EACnB,YAAY;EACZ,YAAY;EACZ,eAAe;AACjB;;AAEA;;EAEE,aAAa;EACb,YAAY;AACd;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;;EAEE,yBAAyB;AAC3B","sourcesContent":[".login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n\n.signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signin-form a {\n  text-decoration: none;\n}\n\n.signin-form a:link {\n  color: #3581d7;\n}\n\n.signin-form a:visited {\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n}\n\n.select-box {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  padding: 5px;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 10px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n}\n\n.select-box .select-box__edit-profile-button:hover,\n.select-box .select-box__logout-button:hover {\n  background-color: #98e2ec;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 36px;\n  width: 36px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n\n.signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signup-text {\n  cursor: pointer;\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n  display: flex;\n  position: relative;\n  flex-direction: column;\n}\n\n.select-box {\n  position: absolute;\n  top: 50px;\n  right: 5px;\n  align-items: center;\n}\n\n.select-box-flex {\n  display: flex;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 5px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n  border-radius: 10px 10px 0 0;\n}\n\n.select-box .select-box__logout-button {\n  border-radius: 0 0 10px 10px;\n}\n\n.select-box .select-box__edit-profile-button:hover,\n.select-box .select-box__logout-button:hover {\n  background-color: #98e2ec;\n}\n", "",{"version":3,"sources":["webpack://./src/css/auth.css"],"names":[],"mappings":"AAAA;EACE,oBAAoB;EACpB,eAAe;AACjB;;AAEA;EACE,oBAAoB;EACpB,YAAY;EACZ,WAAW;EACX,kBAAkB;EAClB,YAAY;EACZ,sBAAsB;EACtB,2BAA2B;EAC3B,eAAe;AACjB;;AAEA;;;EAGE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,sBAAsB;AACxB;;AAEA;;;EAGE,sBAAsB;AACxB;;AAEA;;;EAGE,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;;;EAGE,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,yBAAyB;EACzB,SAAS;EACT,kBAAkB;EAClB,WAAW;EACX,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,oBAAoB;EACpB,aAAa;EACb,kBAAkB;EAClB,sBAAsB;AACxB;;AAEA;EACE,kBAAkB;EAClB,SAAS;EACT,UAAU;EACV,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,mBAAmB;EACnB,YAAY;EACZ,eAAe;AACjB;;AAEA;;EAEE,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,6BAA6B;EAC7B,4BAA4B;AAC9B;;AAEA;EACE,4BAA4B;AAC9B;;AAEA;;EAEE,yBAAyB;AAC3B","sourcesContent":[".login-button {\n  align-self: flex-end;\n  cursor: pointer;\n}\n\n.user-info-button {\n  align-self: flex-end;\n  height: 36px;\n  width: 36px;\n  border-radius: 50%;\n  color: black;\n  border: 1px solid #fff;\n  background-color: #00bcd429;\n  cursor: pointer;\n}\n\n.signup-form,\n.signin-form,\n.edit-profile-form {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.signup-form label,\n.signin-form label,\n.edit-profile-form label {\n  align-self: flex-start;\n}\n\n.signup-form input,\n.signin-form input,\n.edit-profile-form input {\n  width: 280px;\n  margin-bottom: 20px;\n}\n\n.edit-profile-form input:disabled {\n  background-color: #e0e0e0;\n}\n\n.signup-form button,\n.signin-form button,\n.edit-profile-form button {\n  width: 280px;\n  height: 35px;\n  margin-top: 10px;\n  background-color: #00bcd4;\n  border: 0;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n\n.signup-text {\n  cursor: pointer;\n  color: #3581d7;\n}\n\n.select-box-wrapper {\n  align-self: flex-end;\n  display: flex;\n  position: relative;\n  flex-direction: column;\n}\n\n.select-box {\n  position: absolute;\n  top: 50px;\n  right: 5px;\n  align-items: center;\n}\n\n.select-box-flex {\n  display: flex;\n  flex-direction: column;\n}\n\n.select-box button {\n  background: #f5f5f5;\n  width: 100px;\n  cursor: pointer;\n}\n\n.select-box .select-box__edit-profile-button,\n.select-box .select-box__logout-button {\n  padding: 5px;\n  border: none;\n}\n\n.select-box .select-box__edit-profile-button {\n  border-bottom: 1px solid #000;\n  border-radius: 10px 10px 0 0;\n}\n\n.select-box .select-box__logout-button {\n  border-radius: 0 0 10px 10px;\n}\n\n.select-box .select-box__edit-profile-button:hover,\n.select-box .select-box__logout-button:hover {\n  background-color: #98e2ec;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -774,8 +774,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../router */ "./src/router.ts");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -787,11 +788,12 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 };
 
 
+
 class Auth {
     constructor() {
-        (0,_utils__WEBPACK_IMPORTED_MODULE_1__.on)('.signup-form', '@signup', (e) => this.signup(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('sign-up'));
-        (0,_utils__WEBPACK_IMPORTED_MODULE_1__.on)('.signin-form', '@signin', (e) => this.signin(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('sign-in'));
-        (0,_utils__WEBPACK_IMPORTED_MODULE_1__.on)('.edit-profile-form', '@editProfile', (e) => this.editProfile(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('edit-profile'));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.signup-form', '@signup', (e) => this.signup(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('sign-up'));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.signin-form', '@signin', (e) => this.signin(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('sign-in'));
+        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.on)('.edit-profile-form', '@editProfile', (e) => this.editProfile(e.detail), (0,_utils__WEBPACK_IMPORTED_MODULE_2__.$)('edit-profile'));
     }
     signup(userInfo) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -814,11 +816,12 @@ class Auth {
                 if (!response.ok) {
                     throw new Error('중복된 이메일이 존재합니다.');
                 }
+                // 로그인 페이지 전환 로직 추가
+                (0,_router__WEBPACK_IMPORTED_MODULE_0__.historyRouterPush)('/javascript-vendingmachine/signin');
             }
             catch (e) {
-                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.showSnackBar)(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(e.message);
             }
-            // 로그인 페이지 전환 로직 추가
         });
     }
     signin(userInfo) {
@@ -840,17 +843,16 @@ class Auth {
                 }
                 const loginUserDataResponse = yield response.json();
                 const { user, accessToken } = loginUserDataResponse;
-                _storage__WEBPACK_IMPORTED_MODULE_0__["default"].setLocalStorage('userInfo', user);
-                _storage__WEBPACK_IMPORTED_MODULE_0__["default"].setLocalStorage('accessToken', accessToken);
+                _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userInfo', user);
+                _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('accessToken', accessToken);
+                // 메인 페이지 전환 로직
+                (0,_router__WEBPACK_IMPORTED_MODULE_0__.historyRouterPush)('/javascript-vendingmachine/');
             }
             catch (e) {
-                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.showSnackBar)(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(e.message);
             }
-            // 메인 페이지 전환 로직
-            // nav 탭 표시
         });
     }
-    logout() { }
     editProfile(userInfo) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
@@ -858,8 +860,8 @@ class Auth {
                 if (password !== passwordConfirm) {
                     throw new Error('비밀번호가 일치하지 않습니다.');
                 }
-                const userId = _storage__WEBPACK_IMPORTED_MODULE_0__["default"].getUserInfo().id;
-                const accessToken = _storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken();
+                const userId = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getUserInfo().id;
+                const accessToken = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getAccessToken();
                 const response = yield fetch(`https://js-vendingmachine-server.herokuapp.com/users/${userId}`, {
                     method: 'PATCH',
                     body: JSON.stringify({
@@ -873,14 +875,20 @@ class Auth {
                 });
                 const responseData = yield response.json();
                 const { email, userName, id } = responseData;
-                _storage__WEBPACK_IMPORTED_MODULE_0__["default"].setLocalStorage('userInfo', { email, userName, id });
+                _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userInfo', { email, userName, id });
+                // 메인 페이지 전환 로직
+                (0,_router__WEBPACK_IMPORTED_MODULE_0__.historyRouterPush)('/javascript-vendingmachine/');
             }
             catch (e) {
-                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.showSnackBar)(e.message);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(e.message);
             }
         });
     }
 }
+Auth.logout = () => {
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('accessToken');
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Auth);
 
 
@@ -1197,41 +1205,122 @@ VendingMachine._instance = null;
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.ts");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "historyRouterPush": () => (/* binding */ historyRouterPush)
+/* harmony export */ });
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storage */ "./src/storage.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/utils.ts");
 
-const nav = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('.nav');
+
+const nav = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav');
 const baseURL = '/javascript-vendingmachine';
-nav.addEventListener('click', (e) => {
-    if (e.target.type === undefined)
-        return;
-    const route = e.target.getAttribute('route');
-    historyRouterPush(route);
-});
 const historyRouterPush = (pathname) => {
     if (pathname === window.location.pathname)
         return;
+    if (pathname === '/javascript-vendingmachine/logout')
+        pathname = '/javascript-vendingmachine/';
     history.pushState({ pathname }, '', pathname);
     render(pathname);
 };
 const render = (path) => {
-    var _a, _b, _c;
-    (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$$)('.focus-button').forEach((button) => button.classList.remove('focus-button'));
-    (_a = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)(`[route='${path}']`, nav)) === null || _a === void 0 ? void 0 : _a.classList.add('focus-button');
-    const currentComponent = (_c = (_b = routers.find((route) => route.path === path)) === null || _b === void 0 ? void 0 : _b.component) !== null && _c !== void 0 ? _c : (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management');
+    var _a;
+    (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$$)('.focus-button').forEach((button) => button.classList.remove('focus-button'));
+    (_a = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)(`[route='${path}']`, nav)) === null || _a === void 0 ? void 0 : _a.classList.add('focus-button');
+    switch (path) {
+        case `${baseURL}/`:
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.remove('hidden');
+            if (_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken()) {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('product-management').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.user-info-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.user-info-button').textContent = _storage__WEBPACK_IMPORTED_MODULE_0__["default"].getUserInfo().userName.slice(0, 1);
+            }
+            else {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('purchase-tab').classList.remove('hidden');
+            }
+            break;
+        case `${baseURL}/charge`:
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.remove('hidden');
+            if (_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken()) {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('charge-tab').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.user-info-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.user-info-button').textContent = _storage__WEBPACK_IMPORTED_MODULE_0__["default"].getUserInfo().userName.slice(0, 1);
+            }
+            else {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('purchase-tab').classList.remove('hidden');
+            }
+            break;
+        case `${baseURL}/purchase`:
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.remove('hidden');
+            if (_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken()) {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('purchase-tab').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.user-info-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.user-info-button').textContent = _storage__WEBPACK_IMPORTED_MODULE_0__["default"].getUserInfo().userName.slice(0, 1);
+            }
+            else {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('purchase-tab').classList.remove('hidden');
+            }
+            break;
+        case `${baseURL}/signin`:
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+            const signinComponent = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('sign-in');
+            signinComponent.classList.remove('hidden');
+            break;
+        case `${baseURL}/signup`:
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+            const signupComponent = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('sign-up');
+            signupComponent.classList.remove('hidden');
+            break;
+        case `${baseURL}/editprofile`:
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+            const editProfileComponent = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('edit-profile');
+            editProfileComponent.classList.remove('hidden');
+            break;
+    }
+    if (!_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken() && (path === `${baseURL}/` || path === `${baseURL}/charge`)) {
+        const prevRoute = routers.filter((route) => route.path !== `${baseURL}/purchase`);
+        prevRoute.forEach((router) => router.component.classList.add('hidden'));
+        return;
+    }
     const prevRoute = routers.filter((route) => route.path !== path);
-    currentComponent.classList.remove('hidden');
     prevRoute.forEach((router) => router.component.classList.add('hidden'));
 };
 const routers = [
-    { path: `${baseURL}/`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('product-management') },
-    { path: `${baseURL}/charge`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('charge-tab') },
-    { path: `${baseURL}/purchase`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.$)('purchase-tab') },
+    { path: `${baseURL}/`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('product-management') },
+    { path: `${baseURL}/charge`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('charge-tab') },
+    { path: `${baseURL}/purchase`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('purchase-tab') },
+    { path: `${baseURL}/signin`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('sign-in') },
+    { path: `${baseURL}/signup`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('sign-up') },
+    { path: `${baseURL}/editprofile`, component: (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('edit-profile') },
 ];
 window.addEventListener('popstate', function () {
     render(window.location.pathname);
 });
 if (window.location.pathname === '/') {
-    window.location.pathname = baseURL + '/';
+    window.location.pathname = `${baseURL}/`;
 }
 render(window.location.pathname);
 
@@ -1268,7 +1357,7 @@ const storage = {
         return this.getLocalStorage('userInfo') ? JSON.parse(this.getLocalStorage('userInfo')) : {};
     },
     getAccessToken() {
-        return this.getLocalStorage('accessToken') ? JSON.parse(this.getLocalStorage('accessToken')) : {};
+        return this.getLocalStorage('accessToken') ? JSON.parse(this.getLocalStorage('accessToken')) : '';
     },
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (storage);
@@ -1421,7 +1510,7 @@ const TEMPLATE = {
       <label for="signin-form__password">비밀번호</label>
       <input id="signin-form__password" type="password" name="signinPassword" placeholder="비밀번호를 입력해주세요" required />
       <button type="submit">확인</button>
-      <p>아직 회원이 아니신가요? <a href="">회원가입</a></p>
+      <p>아직 회원이 아니신가요? <span class="signup-text">회원가입</span></p>
     </form>
   </section>
   `,
@@ -1432,7 +1521,7 @@ const TEMPLATE = {
       <label for="signup-form__email">이메일</label>
       <input id="signup-form__email" type="email" name="signupEmail" placeholder="이메일 주소를 입력해주세요" required/>
       <label for="signup-form__name">이름</label>
-      <input id="signup-form__name" type="text" name="signupUserName" placeholder="이름을 입력해주세요" required/>
+      <input id="signup-form__name" type="text" name="signupUserName" placeholder="이름을 입력해주세요" minlength="2" maxlength="6" required/>
       <label for="signup-form__password">비밀번호</label>
       <input id="signup-form__password" type="password" name="signupPassword" placeholder="비밀번호를 입력해주세요" required/>
       <label for="signup-form__password-confirm">비밀번호 확인</label>
@@ -1446,9 +1535,9 @@ const TEMPLATE = {
     <form class="edit-profile-form">
       <h1>회원 정보 수정</h1>
       <label for="edit-profile-form__email">이메일</label>
-      <input id="edit-profile-form__email" type="email" name="editProfileEmail" placeholder="woowacourse@gmail.com" disabled required/>
+      <input id="edit-profile-form__email" type="email" name="editProfileEmail" disabled required/>
       <label for="edit-profile-form__name">이름</label>
-      <input id="edit-profile-form__name" type="text" name="editProfileUserName" placeholder="우테코" required/>
+      <input id="edit-profile-form__name" type="text" name="editProfileUserName" minlength="2" maxlength="6" required/>
       <label for="edit-profile-form__password">비밀번호</label>
       <input id="edit-profile-form__password" type="password" name="editProfilePassword" placeholder="비밀번호를 입력해주세요" required/>
       <label for="edit-profile-form__password-confirm">비밀번호 확인</label>
@@ -1586,6 +1675,83 @@ class EditProfilePage extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["defau
 }
 customElements.define('edit-profile', EditProfilePage);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EditProfilePage);
+
+
+/***/ }),
+
+/***/ "./src/ui/MainUI.ts":
+/*!**************************!*\
+  !*** ./src/ui/MainUI.ts ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _domain_Auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../domain/Auth */ "./src/domain/Auth.ts");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router */ "./src/router.ts");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
+
+
+
+
+class MainUI {
+    constructor() {
+        this.renderUI();
+        // 셀렉트 박스 on/off
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.user-info-button').addEventListener('click', (e) => {
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box').classList.toggle('hidden');
+        });
+        // selectbox 로그아웃
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box__logout-button').addEventListener('click', (e) => {
+            _domain_Auth__WEBPACK_IMPORTED_MODULE_0__["default"].logout();
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box-wrapper').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.login-button').classList.remove('hidden');
+            (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/logout');
+        });
+        // selecbox 회원정보 수정 버튼  history 추가
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box__edit-profile-button').addEventListener('click', (e) => {
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box-wrapper').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.header').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.nav').classList.add('hidden');
+            (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/editprofile');
+        });
+        // 메인 페이지 로그인 버튼 history 추가
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.login-button').addEventListener('click', (e) => {
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.login-button').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.header').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.nav').classList.add('hidden');
+            (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/signin');
+        });
+        // nav 버튼 history 추가
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.nav').addEventListener('click', (e) => {
+            if (e.target.type === undefined)
+                return;
+            const route = e.target.getAttribute('route');
+            (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)(route);
+        });
+        // 회원가입 버튼 클릭
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.signup-text').addEventListener('click', (e) => {
+            (0,_router__WEBPACK_IMPORTED_MODULE_1__.historyRouterPush)('/javascript-vendingmachine/signup');
+        });
+    }
+    renderUI() {
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('#edit-profile-form__email').value = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().email;
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('#edit-profile-form__name').value = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().userName;
+        const accessToken = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getAccessToken();
+        if (accessToken) {
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.login-button').classList.add('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.user-info-button').classList.remove('hidden');
+            (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.user-info-button').textContent = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().userName.slice(0, 1);
+            return;
+        }
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.select-box').classList.add('hidden');
+        (0,_utils__WEBPACK_IMPORTED_MODULE_3__.$)('.user-info-button').classList.add('hidden');
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainUI);
 
 
 /***/ }),
@@ -2162,6 +2328,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_EditProfilePage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ui/EditProfilePage */ "./src/ui/EditProfilePage.ts");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./router */ "./src/router.ts");
 /* harmony import */ var _domain_Auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./domain/Auth */ "./src/domain/Auth.ts");
+/* harmony import */ var _ui_MainUI__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ui/MainUI */ "./src/ui/MainUI.ts");
+
 
 
 
@@ -2172,6 +2340,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 new _domain_Auth__WEBPACK_IMPORTED_MODULE_8__["default"]();
+new _ui_MainUI__WEBPACK_IMPORTED_MODULE_9__["default"]();
 
 })();
 
