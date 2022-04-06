@@ -783,7 +783,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router */ "./src/router.ts");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
-/* harmony import */ var _validator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../validator */ "./src/validator/index.ts");
+/* harmony import */ var _validator_passwordValidator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../validator/passwordValidator */ "./src/validator/passwordValidator.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -809,8 +809,8 @@ class Auth {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { email, userName, password, passwordConfirm } = userInfo;
-                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordIsEqual)(password, passwordConfirm);
-                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordCondition)(password);
+                (0,_validator_passwordValidator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordIsEqual)(password, passwordConfirm);
+                (0,_validator_passwordValidator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordCondition)(password);
                 const response = yield fetch(`${this.SERVER_BASE_URL}/signup`, {
                     method: 'POST',
                     body: JSON.stringify({
@@ -864,8 +864,8 @@ class Auth {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { userName: editedName, password, passwordConfirm } = userInfo;
-                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordIsEqual)(password, passwordConfirm);
-                (0,_validator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordCondition)(password);
+                (0,_validator_passwordValidator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordIsEqual)(password, passwordConfirm);
+                (0,_validator_passwordValidator__WEBPACK_IMPORTED_MODULE_4__.validatePasswordCondition)(password);
                 const userId = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getUserInfo().id;
                 const accessToken = _storage__WEBPACK_IMPORTED_MODULE_2__["default"].getAccessToken();
                 const response = yield fetch(`${this.SERVER_BASE_URL}/users/${userId}`, {
@@ -1061,11 +1061,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage */ "./src/storage.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils */ "./src/utils.ts");
-/* harmony import */ var _validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../validator */ "./src/validator/index.ts");
-/* harmony import */ var _Coin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Coin */ "./src/domain/Coin.ts");
-/* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Product */ "./src/domain/Product.ts");
-/* harmony import */ var _MoneyInput__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MoneyInput */ "./src/domain/MoneyInput.ts");
-/* harmony import */ var _Change__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Change */ "./src/domain/Change.ts");
+/* harmony import */ var _Coin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Coin */ "./src/domain/Coin.ts");
+/* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product */ "./src/domain/Product.ts");
+/* harmony import */ var _MoneyInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MoneyInput */ "./src/domain/MoneyInput.ts");
+/* harmony import */ var _Change__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Change */ "./src/domain/Change.ts");
+/* harmony import */ var _validator_returnChangeValidator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../validator/returnChangeValidator */ "./src/validator/returnChangeValidator.ts");
+/* harmony import */ var _validator_purchaseProductValidator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../validator/purchaseProductValidator */ "./src/validator/purchaseProductValidator.ts");
+/* harmony import */ var _validator_userInputMoneyValidator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../validator/userInputMoneyValidator */ "./src/validator/userInputMoneyValidator.ts");
+/* harmony import */ var _validator_changeValidator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../validator/changeValidator */ "./src/validator/changeValidator.ts");
+/* harmony import */ var _validator_updateProductValidator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../validator/updateProductValidator */ "./src/validator/updateProductValidator.ts");
+/* harmony import */ var _validator_productValidator__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../validator/productValidator */ "./src/validator/productValidator.ts");
+
+
+
+
+
 
 
 
@@ -1077,9 +1087,9 @@ __webpack_require__.r(__webpack_exports__);
 class VendingMachine {
     constructor() {
         this.observers = [];
-        this.amount = new _Coin__WEBPACK_IMPORTED_MODULE_4__["default"](..._storage__WEBPACK_IMPORTED_MODULE_1__["default"].getAmount());
-        this.products = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getProducts().map((product) => new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product, product.id));
-        this.moneyInput = new _MoneyInput__WEBPACK_IMPORTED_MODULE_6__["default"](_storage__WEBPACK_IMPORTED_MODULE_1__["default"].getUserMoney());
+        this.amount = new _Coin__WEBPACK_IMPORTED_MODULE_3__["default"](..._storage__WEBPACK_IMPORTED_MODULE_1__["default"].getAmount());
+        this.products = _storage__WEBPACK_IMPORTED_MODULE_1__["default"].getProducts().map((product) => new _Product__WEBPACK_IMPORTED_MODULE_4__.Product(product, product.id));
+        this.moneyInput = new _MoneyInput__WEBPACK_IMPORTED_MODULE_5__["default"](_storage__WEBPACK_IMPORTED_MODULE_1__["default"].getUserMoney());
     }
     static get instance() {
         if (!VendingMachine._instance) {
@@ -1111,8 +1121,8 @@ class VendingMachine {
     }
     addProduct(product) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateProduct)(product, this.products);
-            const newProduct = new _Product__WEBPACK_IMPORTED_MODULE_5__.Product(product);
+            (0,_validator_productValidator__WEBPACK_IMPORTED_MODULE_12__.validateProduct)(product, this.products);
+            const newProduct = new _Product__WEBPACK_IMPORTED_MODULE_4__.Product(product);
             this.products.push(newProduct);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'add', newProduct);
@@ -1124,7 +1134,7 @@ class VendingMachine {
     }
     updateProduct({ targetName, name, price, quantity }) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateUpdateProduct)(targetName, name, price, this.products);
+            (0,_validator_updateProductValidator__WEBPACK_IMPORTED_MODULE_11__.validateUpdateProduct)(targetName, name, price, this.products);
             const currentProduct = this.products.find((product) => product.name === targetName);
             currentProduct.update({ name, price, quantity });
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
@@ -1144,7 +1154,7 @@ class VendingMachine {
     }
     charge(inputMoney) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateChange)(inputMoney, this.amount.getAmount());
+            (0,_validator_changeValidator__WEBPACK_IMPORTED_MODULE_10__.validateChange)(inputMoney, this.amount.getAmount());
             this.amount.generateRandomCoin(inputMoney);
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('amount', this.amount);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.CHARGE, 'update', this.amount);
@@ -1155,7 +1165,7 @@ class VendingMachine {
     }
     inputMoney(money) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateInputMoney)(money, this.moneyInput.getAmount());
+            (0,_validator_userInputMoneyValidator__WEBPACK_IMPORTED_MODULE_9__.validateInputMoney)(money, this.moneyInput.getAmount());
             this.moneyInput.addMoney(money);
             const userMoney = this.moneyInput.getAmount();
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userMoney', userMoney);
@@ -1167,7 +1177,7 @@ class VendingMachine {
     }
     purchaseProduct(targetName) {
         try {
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validatePurchaseProduct)(targetName, this.products, this.moneyInput.getAmount());
+            (0,_validator_purchaseProductValidator__WEBPACK_IMPORTED_MODULE_8__.validatePurchaseProduct)(targetName, this.products, this.moneyInput.getAmount());
             const targetProduct = this.products.find((product) => product.name === targetName);
             targetProduct.purchase();
             this.moneyInput.subtractMoney(targetProduct.price);
@@ -1187,9 +1197,9 @@ class VendingMachine {
     returnChange() {
         try {
             const chargedCoin = this.amount;
-            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateReturnCharge)(chargedCoin);
+            (0,_validator_returnChangeValidator__WEBPACK_IMPORTED_MODULE_7__.validateReturnCharge)(chargedCoin);
             const userInputMoney = this.moneyInput;
-            const change = new _Change__WEBPACK_IMPORTED_MODULE_7__["default"]();
+            const change = new _Change__WEBPACK_IMPORTED_MODULE_6__["default"]();
             change.calculateReturnChange({ userInputMoney, chargedCoin, change });
             const userMoney = userInputMoney.getAmount();
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('userMoney', userMoney);
@@ -2182,22 +2192,82 @@ const showSnackBar = (message) => {
 
 /***/ }),
 
-/***/ "./src/validator/index.ts":
-/*!********************************!*\
-  !*** ./src/validator/index.ts ***!
-  \********************************/
+/***/ "./src/validator/changeValidator.ts":
+/*!******************************************!*\
+  !*** ./src/validator/changeValidator.ts ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "validateProduct": () => (/* binding */ validateProduct),
-/* harmony export */   "validateChange": () => (/* binding */ validateChange),
-/* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct),
-/* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney),
-/* harmony export */   "validatePurchaseProduct": () => (/* binding */ validatePurchaseProduct),
-/* harmony export */   "validateReturnCharge": () => (/* binding */ validateReturnCharge),
+/* harmony export */   "validateChange": () => (/* binding */ validateChange)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+
+const changeValidator = {
+    isOverMax(inputMoney, currentChange) {
+        return inputMoney + currentChange > _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.MAX;
+    },
+    isIncorrectUnit(inputMoney) {
+        return inputMoney % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.UNIT !== 0;
+    },
+};
+const validateChange = (inputMoney, currentChange) => {
+    if (changeValidator.isOverMax(inputMoney, currentChange)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_AMOUNT);
+    }
+    if (changeValidator.isIncorrectUnit(inputMoney)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_CHARGE_MONEY);
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/validator/passwordValidator.ts":
+/*!********************************************!*\
+  !*** ./src/validator/passwordValidator.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "validatePasswordCondition": () => (/* binding */ validatePasswordCondition),
 /* harmony export */   "validatePasswordIsEqual": () => (/* binding */ validatePasswordIsEqual)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+
+const passwordValidator = {
+    isNotEqual(password, passwordConfirm) {
+        return password !== passwordConfirm;
+    },
+    isInvalid(password) {
+        return !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
+    },
+};
+const validatePasswordCondition = (password) => {
+    if (passwordValidator.isInvalid(password)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_MATCH_PASSWORD_REGEXP);
+    }
+};
+const validatePasswordIsEqual = (password, passwordConfirm) => {
+    if (passwordValidator.isNotEqual(password, passwordConfirm)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.PASSWORD_CONFIRM);
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/validator/productValidator.ts":
+/*!*******************************************!*\
+  !*** ./src/validator/productValidator.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "validateProduct": () => (/* binding */ validateProduct)
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
@@ -2217,22 +2287,76 @@ const validateProduct = (product, products) => {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
     }
 };
-const changeValidator = {
-    isOverMax(inputMoney, currentChange) {
-        return inputMoney + currentChange > _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.MAX;
-    },
-    isIncorrectUnit(inputMoney) {
-        return inputMoney % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AMOUNT.UNIT !== 0;
+
+
+/***/ }),
+
+/***/ "./src/validator/purchaseProductValidator.ts":
+/*!***************************************************!*\
+  !*** ./src/validator/purchaseProductValidator.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "validatePurchaseProduct": () => (/* binding */ validatePurchaseProduct)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+
+const purchaseProductValidator = {
+    isNotEnoughMoney(targetName, products, userInputMoneyAmount) {
+        const targetProduct = products.find((product) => product.name === targetName);
+        const targetProductPrice = targetProduct.price;
+        return targetProductPrice > userInputMoneyAmount;
     },
 };
-const validateChange = (inputMoney, currentChange) => {
-    if (changeValidator.isOverMax(inputMoney, currentChange)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.OVER_AMOUNT);
-    }
-    if (changeValidator.isIncorrectUnit(inputMoney)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_CHARGE_MONEY);
+const validatePurchaseProduct = (targetName, products, userInputMoneyAmount) => {
+    if (purchaseProductValidator.isNotEnoughMoney(targetName, products, userInputMoneyAmount)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_ENOUGH_MONEY);
     }
 };
+
+
+/***/ }),
+
+/***/ "./src/validator/returnChangeValidator.ts":
+/*!************************************************!*\
+  !*** ./src/validator/returnChangeValidator.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "validateReturnCharge": () => (/* binding */ validateReturnCharge)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+
+const returnChangeValidator = {
+    isEmptyChange(chargedCoin) {
+        return chargedCoin.getAmount() === 0;
+    },
+};
+const validateReturnCharge = (chargedCoin) => {
+    if (returnChangeValidator.isEmptyChange(chargedCoin)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.EMPTY_CHANGE);
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/validator/updateProductValidator.ts":
+/*!*************************************************!*\
+  !*** ./src/validator/updateProductValidator.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+
 const updateProductValidator = {
     isDuplicated(targetName, name, products) {
         if (targetName === name) {
@@ -2253,6 +2377,22 @@ const validateUpdateProduct = (targetName, name, price, products) => {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_PRODUCT_PRICE);
     }
 };
+
+
+/***/ }),
+
+/***/ "./src/validator/userInputMoneyValidator.ts":
+/*!**************************************************!*\
+  !*** ./src/validator/userInputMoneyValidator.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+
 const userInputMoneyValidator = {
     isOverMax(currentInputMoney, userInputMoney) {
         return currentInputMoney + userInputMoney > _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.INPUT.MAX;
@@ -2267,46 +2407,6 @@ const validateInputMoney = (money, userInputMoneyAmount) => {
     }
     if (userInputMoneyValidator.isIncorrectUnit(money)) {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.INCORRECT_UNIT_INPUT_MONEY);
-    }
-};
-const purchaseProductValidator = {
-    isNotEnoughMoney(targetName, products, userInputMoneyAmount) {
-        const targetProduct = products.find((product) => product.name === targetName);
-        const targetProductPrice = targetProduct.price;
-        return targetProductPrice > userInputMoneyAmount;
-    },
-};
-const validatePurchaseProduct = (targetName, products, userInputMoneyAmount) => {
-    if (purchaseProductValidator.isNotEnoughMoney(targetName, products, userInputMoneyAmount)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_ENOUGH_MONEY);
-    }
-};
-const returnChangeValidator = {
-    isEmptyChange(chargedCoin) {
-        return chargedCoin.getAmount() === 0;
-    },
-};
-const validateReturnCharge = (chargedCoin) => {
-    if (returnChangeValidator.isEmptyChange(chargedCoin)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.EMPTY_CHANGE);
-    }
-};
-const passwordValidator = {
-    isNotEqual(password, passwordConfirm) {
-        return password !== passwordConfirm;
-    },
-    isInvalid(password) {
-        return !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
-    },
-};
-const validatePasswordCondition = (password) => {
-    if (passwordValidator.isInvalid(password)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_MATCH_PASSWORD_REGEXP);
-    }
-};
-const validatePasswordIsEqual = (password, passwordConfirm) => {
-    if (passwordValidator.isNotEqual(password, passwordConfirm)) {
-        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.PASSWORD_CONFIRM);
     }
 };
 
