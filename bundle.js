@@ -762,6 +762,7 @@ const ERROR_MESSAGE = {
     PASSWORD_CONFIRM: '비밀번호가 일치하지 않습니다. 다시 확인해주세요.',
     DUPLICATED_EMAIL: '중복된 이메일이 존재합니다.',
     NOT_MATCH_USER_INFO: '일치하는 정보가 없습니다.',
+    EMPTY_CHANGE: '자판기에 보유중인 잔돈이 없습니다. 관리자에게 문의해주세요.',
 };
 
 
@@ -1184,8 +1185,9 @@ class VendingMachine {
     }
     returnChange() {
         try {
-            const userInputMoney = this.moneyInput;
             const chargedCoin = this.amount;
+            (0,_validator__WEBPACK_IMPORTED_MODULE_3__.validateReturnCharge)(chargedCoin);
+            const userInputMoney = this.moneyInput;
             const change = new _Change__WEBPACK_IMPORTED_MODULE_7__["default"]();
             change.calculateReturnChange({ userInputMoney, chargedCoin, change });
             const userMoney = userInputMoney.getAmount();
@@ -2191,7 +2193,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "validateChange": () => (/* binding */ validateChange),
 /* harmony export */   "validateUpdateProduct": () => (/* binding */ validateUpdateProduct),
 /* harmony export */   "validateInputMoney": () => (/* binding */ validateInputMoney),
-/* harmony export */   "validatePurchaseProduct": () => (/* binding */ validatePurchaseProduct)
+/* harmony export */   "validatePurchaseProduct": () => (/* binding */ validatePurchaseProduct),
+/* harmony export */   "validateReturnCharge": () => (/* binding */ validateReturnCharge)
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
@@ -2273,6 +2276,16 @@ const purchaseProductValidator = {
 const validatePurchaseProduct = (targetName, products, userInputMoneyAmount) => {
     if (purchaseProductValidator.isNotEnoughMoney(targetName, products, userInputMoneyAmount)) {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_ENOUGH_MONEY);
+    }
+};
+const returnChangeValidator = {
+    isEmptyChange(chargedCoin) {
+        return chargedCoin.getAmount() === 0;
+    },
+};
+const validateReturnCharge = (chargedCoin) => {
+    if (returnChangeValidator.isEmptyChange(chargedCoin)) {
+        throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.EMPTY_CHANGE);
     }
 };
 
