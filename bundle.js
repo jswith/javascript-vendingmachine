@@ -1293,14 +1293,22 @@ const render = (path) => {
             signupComponent.classList.remove('hidden');
             break;
         case `${baseURL}/editprofile`:
-            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.add('hidden');
-            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.add('hidden');
-            (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
-            const editProfileComponent = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('edit-profile');
-            editProfileComponent.classList.remove('hidden');
+            if (_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken()) {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.select-box-wrapper').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.header').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+                const editProfileComponent = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('edit-profile');
+                editProfileComponent.classList.remove('hidden');
+            }
+            else {
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.nav').classList.add('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('.login-button').classList.remove('hidden');
+                (0,_utils__WEBPACK_IMPORTED_MODULE_1__.$)('purchase-tab').classList.remove('hidden');
+            }
             break;
     }
-    if (!_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken() && (path === `${baseURL}/` || path === `${baseURL}/charge`)) {
+    if (!_storage__WEBPACK_IMPORTED_MODULE_0__["default"].getAccessToken() &&
+        (path === `${baseURL}/` || path === `${baseURL}/charge` || path === `${baseURL}/editprofile`)) {
         const prevRoute = routers.filter((route) => route.path !== `${baseURL}/purchase`);
         prevRoute.forEach((router) => router.component.classList.add('hidden'));
         return;
