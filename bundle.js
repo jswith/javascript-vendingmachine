@@ -1135,10 +1135,10 @@ class VendingMachine {
             (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
-    updateProduct({ targetName, name, price, quantity }) {
+    updateProduct({ targetProductName, name, price, quantity }) {
         try {
-            (0,_validator_updateProductValidator__WEBPACK_IMPORTED_MODULE_11__.validateUpdateProduct)(targetName, name, price, this.products);
-            const currentProduct = this.products.find((product) => product.name === targetName);
+            (0,_validator_updateProductValidator__WEBPACK_IMPORTED_MODULE_11__.validateUpdateProduct)(targetProductName, name, price, this.products);
+            const currentProduct = this.products.find((product) => product.name === targetProductName);
             currentProduct.update({ name, price, quantity });
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
             this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'update', currentProduct);
@@ -1148,11 +1148,11 @@ class VendingMachine {
             (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
-    deleteProduct(targetName) {
-        const targetProduct = this.products.find((product) => product.name === targetName);
+    deleteProduct(targetProductName) {
+        const targetProduct = this.products.find((product) => product.name === targetProductName);
         this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PRODUCT, 'delete', targetProduct);
         this.dispatch(_constants__WEBPACK_IMPORTED_MODULE_0__.ELEMENT_KEY.PURCHASE, 'delete', targetProduct);
-        this.products = this.products.filter((product) => product.name !== targetName);
+        this.products = this.products.filter((product) => product.name !== targetProductName);
         _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
     }
     charge(inputMoney) {
@@ -1178,14 +1178,14 @@ class VendingMachine {
             (0,_utils__WEBPACK_IMPORTED_MODULE_2__.showSnackBar)(error.message);
         }
     }
-    purchaseProduct(targetName) {
+    purchaseProduct(targetProductName) {
         try {
-            (0,_validator_purchaseProductValidator__WEBPACK_IMPORTED_MODULE_8__.validatePurchaseProduct)(targetName, this.products, this.moneyInput.getAmount());
-            const targetProduct = this.products.find((product) => product.name === targetName);
+            (0,_validator_purchaseProductValidator__WEBPACK_IMPORTED_MODULE_8__.validatePurchaseProduct)(targetProductName, this.products, this.moneyInput.getAmount());
+            const targetProduct = this.products.find((product) => product.name === targetProductName);
             targetProduct.purchase();
             this.moneyInput.subtractMoney(targetProduct.price);
             if (targetProduct.quantity === 0) {
-                this.products = this.products.filter((product) => product.name !== targetName);
+                this.products = this.products.filter((product) => product.name !== targetProductName);
             }
             const userMoney = this.moneyInput.getAmount();
             _storage__WEBPACK_IMPORTED_MODULE_1__["default"].setLocalStorage('products', this.products);
@@ -1864,11 +1864,11 @@ class ProductManagement extends _CustomElement__WEBPACK_IMPORTED_MODULE_0__["def
         e.preventDefault();
         if (!e.submitter.classList.contains('product-item__confirm-button'))
             return;
-        const targetName = e.target.closest('.product-item').dataset.productName;
+        const targetProductName = e.target.closest('.product-item').dataset.productName;
         const name = e.target.name.value;
         const price = e.target.price.valueAsNumber;
         const quantity = e.target.quantity.valueAsNumber;
-        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.emit)('#product-list-table', '@update', { targetName, name, price, quantity }, this);
+        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.emit)('#product-list-table', '@update', { targetProductName, name, price, quantity }, this);
     }
     notify({ action, data: product }) {
         switch (action) {
@@ -2308,14 +2308,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
 const purchaseProductValidator = {
-    isNotEnoughMoney(targetName, products, userInputMoneyAmount) {
-        const targetProduct = products.find((product) => product.name === targetName);
+    isNotEnoughMoney(targetProductName, products, userInputMoneyAmount) {
+        const targetProduct = products.find((product) => product.name === targetProductName);
         const targetProductPrice = targetProduct.price;
         return targetProductPrice > userInputMoneyAmount;
     },
 };
-const validatePurchaseProduct = (targetName, products, userInputMoneyAmount) => {
-    if (purchaseProductValidator.isNotEnoughMoney(targetName, products, userInputMoneyAmount)) {
+const validatePurchaseProduct = (targetProductName, products, userInputMoneyAmount) => {
+    if (purchaseProductValidator.isNotEnoughMoney(targetProductName, products, userInputMoneyAmount)) {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NOT_ENOUGH_MONEY);
     }
 };
@@ -2362,19 +2362,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
 const updateProductValidator = {
-    isDuplicated(targetName, name, products) {
-        if (targetName === name) {
+    isDuplicated(targetProductName, name, products) {
+        if (targetProductName === name) {
             return false;
         }
-        const filteredProducts = products.filter((product) => product.name !== targetName);
+        const filteredProducts = products.filter((product) => product.name !== targetProductName);
         return filteredProducts.some((product) => product.name === name);
     },
     isIncorrectUnit(price) {
         return price % _constants__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.PRICE.UNIT !== 0;
     },
 };
-const validateUpdateProduct = (targetName, name, price, products) => {
-    if (updateProductValidator.isDuplicated(targetName, name, products)) {
+const validateUpdateProduct = (targetProductName, name, price, products) => {
+    if (updateProductValidator.isDuplicated(targetProductName, name, products)) {
         throw new Error(_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.DUPLICATED_PRODUCT);
     }
     if (updateProductValidator.isIncorrectUnit(price)) {
